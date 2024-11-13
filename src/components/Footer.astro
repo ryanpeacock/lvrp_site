@@ -1,0 +1,140 @@
+---
+
+---
+
+<footer class="bg-big-stone">
+  <div class="container">
+    <div class="left">
+      <p>Follow Us:</p>
+      <div class="social-media-list">
+        <a href="https://www.facebook.com/LVRPCNA" target="_blank">
+          <i class="fab fa-facebook"></i></a
+        >
+        <a href="https://www.youtube.com/@lvrpcna1646" target="_blank"
+          ><i class="fab fa-youtube"></i></a
+        >
+        <a href="https://www.sermonaudio.com/lasvegasrpc" target="_blank">
+          <div class="svg-container">
+            <object type="image/svg+xml" data="/imgs/sermonaudio.svg"></object>
+          </div>
+        </a>
+      </div>
+    </div>
+    <div class="middle">
+      <div class="logo">
+        <img src="imgs/lvrp-logo.png" alt="" />
+      </div>
+      <p>8601 Del Webb Blvd Las Vegas NV 89134</p>
+      <p>Every Lord's Day at 1:00pm</p>
+      <p>(702) 907-5433</p>
+      <a href="#">Contact Us</a>
+      <p class="copyright">&copy;2024 Las Vegas Reformed Presbyterian Church</p>
+    </div>
+    <div class="right">
+      <ul>
+        <li>
+          <a href="/">Home</a>
+          <span class="divider">|</span>
+          <a href="/about.html">About</a>
+        </li>
+        <li></li>
+        <li>
+          <a href="/beliefs.html">Beliefs</a>
+          <span class="divider">|</span>
+          <a href="/leadership.html">Leadership</a>
+        </li>
+        <li></li>
+        <li>
+          <a href="/sermons.html">Sermons</a>
+          <span class="divider">|</span>
+          <a href="/contact.html">Contact</a>
+        </li>
+        <li></li>
+        <li><a href="">Give</a></li>
+      </ul>
+    </div>
+  </div>
+</footer>
+
+<style>
+  footer .container {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    color: white;
+    text-align: center;
+  }
+
+  footer .container .left p {
+    font-size: 1.25rem;
+    margin-bottom: 1rem;
+  }
+  footer .container .left .social-media-list {
+    display: flex;
+  }
+  footer .container .left i {
+    font-size: 2.5rem;
+    margin: 0 0.5rem;
+    transition: color 0.5s ease-in-out;
+  }
+  footer .container .left i:hover {
+    color: var(--husk);
+  }
+  footer .container .left .svg-container object {
+    width: 45px;
+  }
+  footer .container .left .svg-container:hover {
+    --svg-fill: var(--husk);
+  }
+
+  footer .container .middle img {
+    width: 250px;
+  }
+  footer .container .middle p {
+    margin: 0.5rem 0;
+  }
+  footer .container .middle a {
+    color: var(--husk);
+  }
+  footer .container .middle .copyright {
+    margin-top: 2rem;
+  }
+
+  footer .container .right {
+    text-align: center;
+  }
+  footer .container .right ul {
+    list-style: none;
+  }
+
+  footer .container .right ul li {
+    margin: 0.5rem 0;
+    display: flex;
+    justify-content: center;
+  }
+  footer .container .right ul li .divider {
+    margin: 0 0.5rem;
+  }
+  footer.container .right ul li a {
+    margin-right: 0.5rem;
+    transition: color 0.5s ease-in-out;
+  }
+  footer .container .right ul li a:hover {
+    color: var(--husk);
+  }
+  @media only screen and (max-width: 768px) {
+    footer .container {
+      flex-direction: column;
+    }
+    footer .container .left {
+      order: 1;
+      margin-bottom: 1rem;
+    }
+    footer .container .middle {
+      order: 2;
+    }
+    footer .container .right {
+      display: none;
+    }
+  }
+</style>

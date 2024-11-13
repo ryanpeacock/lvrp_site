@@ -1,0 +1,112 @@
+---
+const { sermon } = Astro.props;
+---
+
+<div class="sermon-item">
+  <div class="top">
+    <div class="left">
+      <img class="speaker-img" src={sermon?.speaker?.portraitURL} alt="" />
+      <div class="sermon-info">
+        <span class="title">{sermon?.fullTitle}</span>
+        <span class="speaker">{sermon?.speaker?.displayName}</span>
+        <span class="series">{sermon?.subtitle}</span>
+        <span class="text">{sermon?.bibleText}</span>
+      </div>
+    </div>
+    <div class="right">
+      <div class="other-info">
+        <span class="date">
+          <span class="day">SAT</span>
+          {sermon?.preachDate}
+        </span>
+        <span class="type"
+          >{`${sermon?.eventType} | ${sermon?.audioDurationSeconds} sec`}</span
+        >
+      </div>
+    </div>
+  </div>
+  <div class="audio-player">
+    <audio controls>
+      <source
+        src={`https://samedia-b2-east.b-cdn.net/com-sermonaudio-sermons2/${sermon?.sermonID}.mp3?ts=1723331417`}
+        type="audio/mpeg"
+      />
+      Your browser does not support the audio element.
+    </audio>
+  </div>
+</div>;
+
+<style>
+  .sermon-item {
+    box-shadow:
+      0 4px 8px rgba(0, 0, 0, 0.2),
+      0 2px 4px rgba(0, 0, 0, 0.2);
+    width: 85%;
+    padding: 1rem;
+    border-radius: 10px;
+    margin: 1.5rem 1rem;
+    transition: transform 0.7s ease-in-out;
+  }
+  .sermon-item:hover {
+    transform: scale(1.02);
+    cursor: pointer;
+  }
+
+  .sermon-item .top {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 0.8rem;
+    line-height: 1.5;
+  }
+
+  .sermon-item .top .left {
+    display: flex;
+    align-items: center;
+  }
+
+  .sermon-item .top .right {
+    text-align: right;
+  }
+
+  .sermon-item .top .left .speaker-img {
+    width: 60px;
+    height: 60px;
+    border-radius: 30px;
+    border: 3px solid var(--husk);
+    object-fit: cover;
+    object-position: center;
+    margin-right: 0.5rem;
+  }
+
+  .sermon-item .top .left .sermon-info {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .sermon-item .top .left .sermon-info .title {
+    font-size: 1.05rem;
+    font-weight: bold;
+  }
+
+  .sermon-item .top .right .other-info {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .sermon-item audio {
+    display: block;
+    width: 95%;
+    margin: 1.5rem auto;
+  }
+  @media only screen and (max-width: 768px) {
+    .sermon-item {
+      width: 100%;
+      margin: 1.5rem 0;
+    }
+  }
+  @media only screen and (max-width: 992px) {
+  }
+  @media only screen and (max-width: 1200px) {
+  }
+</style>

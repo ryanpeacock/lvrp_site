@@ -1,3 +1,104 @@
-<div>
-  <h2>Header</h2>
-</div>
+---
+interface Props {
+  hidden?: boolean;
+}
+
+const { hidden = false } = Astro.props;
+---
+
+<header class={`nav-menu-scroll ${hidden ? "hide-menu" : ""}`}>
+  <div class="logo">
+    <a href="/"> <img src="/images/lvrp-logo.png" alt="" /></a>
+  </div>
+  <div class="menu-items">
+    <ul>
+      <li><a href="/">Home</a></li>
+      <li><a href="/about.html">About</a></li>
+      <li><a href="/beliefs.html">Beliefs</a></li>
+      <li><a href="/leadership.html">Leadership</a></li>
+      <li><a href="/sermons.html">Sermons</a></li>
+      <li><a href="/contact.html">Contact</a></li>
+      <li>Give</li>
+    </ul>
+  </div>
+  <div class="mobile-menu">
+    <i class="fas fa-bars"></i>
+  </div>
+</header>
+
+<style>
+  /* Nav-Menu Scroll */
+  .nav-menu-scroll {
+    background: black;
+    padding: 0.5rem 4rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    margin: 0;
+    transition: opacity 0.5s ease-in-out;
+  }
+
+  .nav-menu-scroll img {
+    width: 175px;
+  }
+
+  .nav-menu-scroll .mobile-menu {
+    font-size: 2rem;
+    color: white;
+    display: none;
+  }
+  .nav-menu-scroll .mobile-menu i:hover {
+    cursor: pointer;
+  }
+
+  .nav-menu-scroll .menu-items ul {
+    list-style: none;
+    display: flex;
+    font-size: 1.15rem;
+  }
+  .nav-menu-scroll .menu-items li {
+    margin: 0 1rem;
+    color: white;
+    transition: color 0.5s ease-in-out;
+  }
+  .nav-menu-scroll .menu-items li:hover {
+    cursor: pointer;
+    color: var(--husk);
+  }
+
+  .hide-menu {
+    opacity: 0;
+    position: fixed;
+  }
+
+  @media only screen and (max-width: 768px) {
+    .nav-menu-scroll img {
+      width: 215px;
+    }
+    .nav-menu-scroll {
+      padding: 1rem 2rem;
+      flex-wrap: no-wrap;
+    }
+    .nav-menu-scroll .menu-items {
+      display: none;
+    }
+    .nav-menu-scroll .mobile-menu {
+      display: block;
+    }
+  }
+  @media only screen and (max-width: 992px) {
+    .nav-menu-scroll .menu-items ul {
+      flex-wrap: wrap;
+    }
+  }
+  @media only screen and (max-width: 1200px) {
+    .nav-menu-scroll {
+      flex-wrap: wrap;
+    }
+
+    .nav-menu-scroll {
+      padding-bottom: 2rem;
+    }
+  }
+</style>
