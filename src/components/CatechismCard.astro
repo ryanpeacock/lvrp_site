@@ -1,0 +1,39 @@
+---
+interface ProofText {
+  book?: string; // Optional
+  verse: string;
+  text: string;
+}
+
+// Define the structure for the question item
+interface QuestionItem {
+  id: number;
+  question: string;
+  answer: string[];
+  proofTexts: ProofText[][];
+}
+
+interface Props {
+  question: QuestionItem;
+}
+
+const { question } = Astro.props;
+---
+
+<div class="catechism-card border border-red-200 border-solid">
+  <div class="title">
+    <span class="question">{`Question ${question.id}`}.</span>
+    <span class="answer">{question.question}</span>
+  </div>
+</div>
+
+<style>
+  .catechism-card {
+    padding: 1rem;
+    width: 325px;
+    margin: 1rem;
+  }
+
+  .question {
+  }
+</style>

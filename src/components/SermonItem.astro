@@ -1,4 +1,10 @@
 ---
+import {
+  convertSecondsToMinutes,
+  getDayOfWeek,
+  formatDateToMMDDYYYY,
+} from "../utils/formatters";
+
 const { sermon } = Astro.props;
 ---
 
@@ -16,11 +22,13 @@ const { sermon } = Astro.props;
     <div class="right">
       <div class="other-info">
         <span class="date">
-          <span class="day">SAT</span>
-          {sermon?.preachDate}
+          <span class="day">{getDayOfWeek(sermon?.preachDate)}</span>
+          {formatDateToMMDDYYYY(sermon?.preachDate)}
         </span>
         <span class="type"
-          >{`${sermon?.eventType} | ${sermon?.audioDurationSeconds} sec`}</span
+          >{
+            `${sermon?.eventType} | ${convertSecondsToMinutes(sermon?.audioDurationSeconds)} min`
+          }</span
         >
       </div>
     </div>

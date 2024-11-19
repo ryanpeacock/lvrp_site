@@ -1,0 +1,23 @@
+---
+import PageLayout from "../../layouts/PageLayout.astro";
+import { shorterCatechism } from "../../data/shorterCatechism";
+import CatechismCard from "../../components/CatechismCard.astro";
+---
+
+<PageLayout title="Westminster Shorter Catechism">
+  <div class="container">
+    <div class="catechism-container flex items-start flex-wrap justify-center">
+      {
+        shorterCatechism.map((question) => {
+          return <CatechismCard question={question} />;
+        })
+      }
+    </div>
+  </div>
+</PageLayout>
+
+<style>
+  .catechism-container {
+    justify-content: center;
+  }
+</style>
