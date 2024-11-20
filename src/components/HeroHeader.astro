@@ -24,7 +24,7 @@ import Header from "../components/Header.astro";
           <i class="fas fa-bars"></i>
         </div>
       </header>
-      <Header hidden />
+      <Header hidden sticky={false} />
       <div class="bottom-container">
         <div class="hero-text">
           <p>
@@ -38,6 +38,27 @@ import Header from "../components/Header.astro";
     </div>
   </div>
 </section>
+
+<script>
+  document.addEventListener("DOMContentLoaded", function () {
+    var mainNav = document.querySelector(".nav-menu");
+    var scrollNav = document.querySelector(".nav-menu-scroll");
+    var header = document.querySelector("#hero-section");
+    var headerHeight = header.scrollHeight;
+
+    window.addEventListener("scroll", function () {
+      if (window.scrollY > headerHeight) {
+        mainNav.classList.add("hide-menu");
+        scrollNav.classList.add("sticky");
+        scrollNav.classList.remove("hide-menu");
+      } else {
+        mainNav.classList.remove("hide-menu");
+        scrollNav.classList.remove("sticky");
+        scrollNav.classList.add("hide-menu");
+      }
+    });
+  });
+</script>
 
 <style>
   #hero-section .outside-container {

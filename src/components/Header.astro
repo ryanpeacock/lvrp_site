@@ -1,12 +1,17 @@
 ---
+import type { boolean } from "astro:schema";
+
 interface Props {
   hidden?: boolean;
+  sticky?: boolean;
 }
 
-const { hidden = false } = Astro.props;
+const { hidden = false, sticky = true } = Astro.props;
 ---
 
-<header class={`nav-menu-scroll ${hidden ? "hide-menu" : ""}`}>
+<header
+  class={`nav-menu-scroll ${sticky ? "sticky top-0" : ""} ${hidden ? "hide-menu" : ""}`}
+>
   <div class="logo">
     <a href="/"> <img src="/images/lvrp-logo.png" alt="" /></a>
   </div>

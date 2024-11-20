@@ -27,27 +27,6 @@ const { title, description = "community of music producers" } = Astro.props;
   </body>
 </html>
 
-<script>
-  document.addEventListener("DOMContentLoaded", function () {
-    var mainNav = document.querySelector(".nav-menu");
-    var scrollNav = document.querySelector(".nav-menu-scroll");
-    var header = document.querySelector("#hero-section");
-    var headerHeight = header.scrollHeight;
-
-    window.addEventListener("scroll", function () {
-      if (window.scrollY > headerHeight) {
-        mainNav.classList.add("hide-menu");
-        scrollNav.classList.add("sticky");
-        scrollNav.classList.remove("hide-menu");
-      } else {
-        mainNav.classList.remove("hide-menu");
-        scrollNav.classList.remove("sticky");
-        scrollNav.classList.add("hide-menu");
-      }
-    });
-  });
-</script>
-
 <style is:global>
   :root {
     --big-stone: #152b43;
