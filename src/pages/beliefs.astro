@@ -1,13 +1,89 @@
 ---
+import LinkCard from "../components/LinkCard.astro";
 import PageLayout from "../layouts/PageLayout.astro";
+
+const standards = [
+  {
+    title: "Reformed Presbyterian Testiomony",
+    link: "/beliefs/testimony.html",
+  },
+  {
+    title: "Westminster Confession",
+    link: "/beliefs/confession.html",
+  },
+  {
+    title: "Westminster Shorter Catechism",
+    link: "/beliefs/shorter-catechism.html",
+  },
+  {
+    title: "Westminster Larger Catechism",
+    link: "/beliefs/larger-catechism.html",
+  },
+];
+const creeds = [
+  {
+    title: "Apostles Creed",
+    link: "/beliefs/apostles-creed.html",
+  },
+  {
+    title: "Nicene Creed",
+    link: "/beliefs/nicene-creed.html",
+  },
+  {
+    title: "Chalcedonian Definition",
+    link: "/beliefs/chalcedonian-definition.html",
+  },
+  {
+    title: "Athanasian Creed",
+    link: "/beliefs/athanasian-creed.html",
+  },
+];
 ---
 
 <PageLayout title="Beliefs">
-  <h1>Beliefs</h1>
+  <div class="beliefs-section confessional-standards border border-green-300">
+    <h2>Confessional Standards</h2>
+    <div class="container">
+      <div class="belief-list">
+        {
+          standards.map((standard) => {
+            return <LinkCard data={standard} />;
+          })
+        }
+      </div>
+    </div>
+  </div>
+  <div class="beliefs-section creeds border border-green-300">
+    <h2>Ecumenical Creeds</h2>
+    <div class="container">
+      <div class="belief-list">
+        {
+          creeds.map((standard) => {
+            return <LinkCard data={standard} />;
+          })
+        }
+      </div>
+    </div>
+  </div>
 </PageLayout>
 
 <style>
+  .beliefs-section h2 {
+    margin-top: 3rem;
+    font-size: 2rem;
+    text-align: center;
+  }
+
+  .belief-list {
+    gap: 15px;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+  }
   @media only screen and (max-width: 768px) {
+    .belief-list {
+      flex-direction: column;
+    }
   }
   @media only screen and (max-width: 992px) {
   }

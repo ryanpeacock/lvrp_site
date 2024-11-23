@@ -1,0 +1,110 @@
+---
+
+---
+
+<!-- Service Information -->
+<section id="service-info" class="bg-light-gray">
+  <div class="container">
+    <div class="middle-block">
+      <div class="left">
+        <h2>Join Us This Lord's Day</h2>
+        <p>
+          Our worship service starts at 1:00pm. We usually have a time of
+          fellowship after with light food, followed by a bible study.
+        </p>
+        <p>
+          We meet in the fellowship hall of Mountain View Presbyterian Church
+          located at: <br />
+          8601 Del Webb Blvd Las Vegas NV 89134
+        </p>
+        <button class="btn btn-husk">Plan a visit</button>
+      </div>
+      <div class="right">
+        <iframe
+          src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3219.2038371561716!2d-115.2855462249713!3d36.210240172421216!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x80c8c0703448286b%3A0xf1b9d1bd6503236a!2sLas%20Vegas%20Reformed%20Presbyterian%20Church!5e0!3m2!1sen!2sus!4v1722136536241!5m2!1sen!2sus"
+          style="border: 0"
+          allowfullscreen=""
+          loading="lazy"
+          referrerpolicy="no-referrer-when-downgrade"></iframe>
+      </div>
+    </div>
+  </div>
+</section>
+
+<style>
+  #service-info .container {
+    display: flex;
+    justify-content: center;
+  }
+  #service-info .container .middle-block {
+    width: 100%;
+    display: flex;
+    overflow: hidden;
+    border-radius: 10px;
+    box-shadow:
+      0 4px 6px rgba(0, 0, 0, 0.1),
+      0 1px 3px rgba(0, 0, 0, 0.08); /* Subtle, layered shadows */
+  }
+
+  #service-info .container .middle-block .left {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background: var(--big-stone);
+    color: white;
+    padding: 6rem 4rem;
+    flex: 50%;
+    text-align: center;
+  }
+
+  #service-info .container .middle-block .left h2 {
+    font-size: 2.25rem;
+    margin-bottom: 1.5rem;
+  }
+  #service-info .container .middle-block .left p {
+    margin-bottom: 1.5rem;
+    line-height: 1.75;
+  }
+  #service-info .container .middle-block .right {
+    flex: 50%;
+  }
+
+  #service-info .container .middle-block .right iframe {
+    width: 100%;
+    height: 100%;
+  }
+  @media only screen and (max-width: 768px) {
+    #service-info .container {
+      padding: 0 0 2rem 0;
+    }
+    #service-info .container .middle-block {
+      border-top-right-radius: 0;
+      border-top-left-radius: 0;
+      flex-direction: column;
+    }
+
+    #service-info .container .middle-block .right iframe {
+      height: 350px;
+    }
+    #service-info .container {
+      padding: 0 0 2rem 0;
+    }
+    #service-info .container .middle-block {
+      border-top-right-radius: 0;
+      border-top-left-radius: 0;
+      flex-direction: column;
+    }
+
+    #service-info .container .middle-block .right iframe {
+      height: 350px;
+    }
+  }
+  @media only screen and (max-width: 992px) {
+    #service-info .container .middle-block .left {
+      padding: 2rem 4rem;
+    }
+  }
+  @media only screen and (max-width: 1200px) {
+  }
+</style>

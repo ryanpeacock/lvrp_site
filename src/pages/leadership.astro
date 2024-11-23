@@ -1,13 +1,98 @@
 ---
+import LeaderCard from "../components/LeaderCard.astro";
 import PageLayout from "../layouts/PageLayout.astro";
+
+const elders = [
+  {
+    name: "Edgar Ibarra",
+    image: "/images/lvrp-leader-1.jpg",
+    office: "Pastor",
+    bio: `Lorem ipsum dolor sit amet consectetur adipisicing elit. Nulla,quisquam similique veritatis nemo magnam earum sequi mollitia ad incidunt delectus eum corrupti ipsum tenetur sapiente!`,
+  },
+  {
+    name: "Colin Pearson",
+    image: "/images/lvrp-leader-2.jpg",
+    office: "Ruling Elder",
+    bio: `Lorem ipsum dolor sit amet consectetur adipisicing elit. Nulla,quisquam similique veritatis nemo magnam earum sequi mollitia ad incidunt delectus eum corrupti ipsum tenetur sapiente!`,
+  },
+];
+const deacons = [
+  {
+    name: "Andy Motdoch",
+    image: "/images/lvrp-leader-3.jpg",
+    office: "Deacon",
+    bio: `Lorem ipsum dolor sit amet consectetur adipisicing elit. Nulla,quisquam similique veritatis nemo magnam earum sequi mollitia ad incidunt delectus eum corrupti ipsum tenetur sapiente!`,
+  },
+  {
+    name: "Nathan Bell",
+    image: "/images/lvrp-leader-4.jpg",
+    office: "Deacon",
+    bio: `Lorem ipsum dolor sit amet consectetur adipisicing elit. Nulla,quisquam similique veritatis nemo magnam earum sequi mollitia ad incidunt delectus eum corrupti ipsum tenetur sapiente!`,
+  },
+];
 ---
 
 <PageLayout title="Leadership">
-  <h1>Leadership</h1>
+  <div class="leadership-blurb">
+    <div class="container">
+      <div class="blurb-container">
+        <p>
+          Lorem ipsum dolor sit amet consectetur adipisicing elit. Maxime ut
+          sequi atque veniam reiciendis quae maiores corporis quis, impedit
+          tempora dolorem perspiciatis beatae autem, aliquam temporibus ad,
+          facilis id eos alias accusamus sed rerum odit nesciunt. Earum
+          reiciendis mollitia magnam exercitationem consequatur doloremque quo.
+          Aut officia fuga porro cupiditate itaque.
+        </p>
+      </div>
+    </div>
+  </div>
+  <div class="leadership-section session border border-green-400">
+    <h2>Our Session</h2>
+    <div class="container">
+      <div class="leaders-list">
+        {
+          elders.map((elder) => {
+            return <LeaderCard data={elder} />;
+          })
+        }
+      </div>
+    </div>
+  </div>
+  <div class="leadership-section deacons border border-green-400">
+    <h2>Our Deacons</h2>
+    <div class="container">
+      <div class="leaders-list">
+        {
+          deacons.map((elder) => {
+            return <LeaderCard data={elder} />;
+          })
+        }
+      </div>
+    </div>
+  </div>
 </PageLayout>
 
 <style>
+  .leadership-blurb .blurb-container {
+    margin: 0 auto;
+    width: 65%;
+  }
+  .leadership-section h2 {
+    text-align: center;
+    margin-top: 1rem;
+    font-size: 2rem;
+  }
+
+  .leaders-list {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+  }
   @media only screen and (max-width: 768px) {
+    .leaders-list {
+      flex-direction: column;
+    }
   }
   @media only screen and (max-width: 992px) {
   }
