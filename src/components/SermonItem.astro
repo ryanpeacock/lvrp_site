@@ -5,10 +5,10 @@ import {
   formatDateToMMDDYYYY,
 } from "../utils/formatters";
 
-const { sermon } = Astro.props;
+const { sermon, width = "85%" } = Astro.props;
 ---
 
-<div class="sermon-item">
+<div class="sermon-item flex flex-col justify-between" style={{ width }}>
   <div class="top">
     <div class="left">
       <img class="speaker-img" src={sermon?.speaker?.portraitURL} alt="" />
@@ -42,14 +42,13 @@ const { sermon } = Astro.props;
       Your browser does not support the audio element.
     </audio>
   </div>
-</div>;
+</div>
 
 <style>
   .sermon-item {
     box-shadow:
       0 4px 8px rgba(0, 0, 0, 0.2),
       0 2px 4px rgba(0, 0, 0, 0.2);
-    width: 85%;
     padding: 1rem;
     border-radius: 10px;
     margin: 1.5rem 1rem;
@@ -93,7 +92,7 @@ const { sermon } = Astro.props;
   }
 
   .sermon-item .top .left .sermon-info .title {
-    font-size: 1.05rem;
+    font-size: 1.02rem;
     font-weight: bold;
   }
 
@@ -109,7 +108,7 @@ const { sermon } = Astro.props;
   }
   @media only screen and (max-width: 768px) {
     .sermon-item {
-      width: 100%;
+      width: 100% !important;
       margin: 1.5rem 0;
     }
   }

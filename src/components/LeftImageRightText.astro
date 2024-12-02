@@ -1,0 +1,82 @@
+---
+interface Props {
+  title: string;
+  image: string;
+}
+
+const { title, image } = Astro.props;
+---
+
+<div class="left-right image-left">
+  <div class="container">
+    <div class="left image-side">
+      <img src={image} alt="" />
+    </div>
+    <div class="right text-side">
+      <h3>{title}</h3>
+      <div class="content">
+        <slot />
+      </div>
+    </div>
+  </div>
+</div>
+
+<style>
+  .left-right {
+    padding-bottom: 3rem;
+  }
+  .left-right .container {
+    padding: 1rem;
+    display: flex;
+  }
+  .left-right .container .left,
+  .left-right .container .right {
+    width: 100%;
+  }
+  .left-right .container .image-side {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  .left-right .container .image-side img {
+    width: 400px;
+    height: 250px;
+    object-fit: cover;
+    border-radius: 15px;
+  }
+  .left-right .container .text-side h3 {
+    font-size: 1.5rem;
+    font-weight: bold;
+    margin: 2rem 0;
+    text-align: center;
+  }
+  .left-right .container .text-side .content {
+    margin: 0 auto;
+    width: 80%;
+  }
+  .content p {
+    line-height: 1.7;
+    margin: 1rem 0;
+  }
+  @media only screen and (max-width: 768px) {
+    .left-right .container {
+      padding: 4rem 1.5rem 2rem 1.5rem;
+    }
+    .image-left .container {
+      flex-direction: column;
+    }
+    .image-right .container {
+      flex-direction: column-reverse;
+    }
+    .left-right .container .text-side .content {
+      width: 100%;
+    }
+    .left-right {
+      padding-bottom: 0;
+    }
+  }
+  @media only screen and (max-width: 992px) {
+  }
+  @media only screen and (max-width: 1200px) {
+  }
+</style>

@@ -1,0 +1,90 @@
+---
+interface Props {
+  data: {
+    title: string;
+    image?: string;
+    text: string;
+    link: string;
+    external?: boolean;
+  };
+}
+
+const {
+  data: { title, image, text, link, external = false },
+} = Astro.props;
+---
+
+<div class="info-card card1">
+  <div
+    class="top"
+    style={{
+      background: `url("${image}")
+      no-repeat top center / cover;`,
+    }}
+  >
+    <div class="overlay">{title}</div>
+  </div>
+  <div class="body">
+    <p>
+      {text}
+    </p>
+    <a target={external ? "_blank" : ""} href={link} class="btn btn-husk"
+      >Learn More</a
+    >
+  </div>
+</div>
+
+<style>
+  .info-card {
+    margin: 0 0.5rem;
+    border-radius: 10px;
+    max-width: 400px;
+    overflow: hidden;
+    box-shadow:
+      0 4px 6px rgba(0, 0, 0, 0.1),
+      0 1px 3px rgba(0, 0, 0, 0.08); /* Subtle, layered shadows */
+    transition: transform 0.5s ease-in-out;
+  }
+  .info-card:hover {
+    cursor: pointer;
+    transform: scale(1.02);
+  }
+
+  .info-card .top .overlay {
+    width: 100%;
+    padding: 6rem 4rem;
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: rgba(21, 43, 67, 0.75);
+    color: white;
+    font-size: 1.5rem;
+    font-weight: bold;
+  }
+  .info-card .body {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 2rem;
+    padding-bottom: 1rem;
+  }
+  .info-card .body p {
+    margin-bottom: 1rem;
+    line-height: 1.5;
+  }
+  .info-card .body a {
+    margin: 1rem auto;
+  }
+
+  @media only screen and (max-width: 768px) {
+    .info-card {
+      margin: 1rem 0;
+      max-width: 95%;
+    }
+  }
+  @media only screen and (max-width: 992px) {
+  }
+  @media only screen and (max-width: 1200px) {
+  }
+</style>

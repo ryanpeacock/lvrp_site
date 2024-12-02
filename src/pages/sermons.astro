@@ -4,31 +4,49 @@ import PageLayout from "../layouts/PageLayout.astro";
 
 const sermonSeries = [
   {
-    title: "Series 1",
+    title: "The Gospel of Luke",
+    id: "152601",
+    link: `/sermons/152601`,
+    image: "/images/sermons/gospelofluke.jpg",
   },
   {
-    title: "Series 2",
+    title: "Leviticus",
+    id: "192111",
+    link: `/sermons/192111`,
+    image: "/images/sermons/leviticus.jpg",
   },
   {
-    title: "Series 3",
+    title: "Regulative Principle of Worship",
+    id: "172011",
+    link: `/sermons/172011`,
+    image: "/images/sermons/worship.jpg",
   },
 ];
 const bibleStudies = [
   {
-    title: "Bible Study 1",
+    title: "Doctrine of Civil Government",
+    id: "196782",
+    link: `/sermons/196782`,
+    image: "/images/sermons/government.jpg",
   },
   {
-    title: "Bible Study 2",
+    title: "The Doctrine of God",
+    id: "189405",
+    link: `/sermons/189405`,
+    image: "/images/sermons/doctrineofGod.jpg",
   },
   {
-    title: "Bible Study 3",
+    title: "Headcoverings",
+    id: "187243",
+    link: `/sermons/187243`,
+    image: "/images/sermons/headcover.png",
   },
 ];
 ---
 
 <PageLayout title="Sermons">
-  <div class="sermons-section recent-sermon-series border border-green-400">
-    <h2>Recent Sermon Series</h2>
+  <div class="sermons-section recent-sermon-series">
+    <h2>Sermon Series</h2>
     <div class="container">
       <div class="sermon-list">
         {
@@ -39,8 +57,9 @@ const bibleStudies = [
       </div>
     </div>
   </div>
-  <div class="sermons-section recent-bible-studies border border-green-400">
-    <h2>Recent Bible Studies</h2>
+  <div class="line-bar"></div>
+  <div class="sermons-section recent-bible-studies">
+    <h2>Bible Studies</h2>
     <div class="container">
       <div class="sermon-list">
         {

@@ -1,0 +1,18 @@
+---
+export const prerender = false;
+import SermonItem from "../../components/SermonItem.astro";
+import PageLayout from "../../layouts/PageLayout.astro";
+import { getSermons } from "../../utils/tools";
+const { slug } = Astro.params;
+
+const sermons = await getSermons(25, slug);
+const title = sermons[0]?.subtitle;
+---
+
+<PageLayout title={title}>
+  <div class="sermon-container p-2 flex flex-wrap w-full lg:w-4/5 mx-auto">
+    {sermons.map((sermon) => <SermonItem sermon={sermon} width="45%" />)}
+  </div>
+</PageLayout>
+
+<style></style>

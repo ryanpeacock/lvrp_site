@@ -1,0 +1,38 @@
+---
+import { getSermons } from "../utils/tools";
+import SermonItem from "./SermonItem.astro";
+
+const sermons = await getSermons(4);
+---
+
+<section id="media-section">
+  <div class="container">
+    <h2>Latest Sermons</h2>
+    <div class="sermon-list">
+      {sermons.map((sermon) => <SermonItem sermon={sermon} />)}
+    </div>
+  </div>
+</section>
+
+<style>
+  #media-section h2 {
+    text-align: center;
+    font-size: 2.5rem;
+    margin-bottom: 2.5rem;
+  }
+
+  #media-section .container .sermon-list {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+  }
+  @media only screen and (max-width: 768px) {
+    #media-section .container {
+      padding: 2rem 1rem;
+    }
+  }
+  @media only screen and (max-width: 992px) {
+  }
+  @media only screen and (max-width: 1200px) {
+  }
+</style>

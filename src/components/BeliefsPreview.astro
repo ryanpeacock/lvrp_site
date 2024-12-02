@@ -1,0 +1,43 @@
+---
+import { infoCards } from "../data/siteData";
+import LearnMoreCard from "./LearnMoreCard.astro";
+---
+
+<section id="beliefs" class="bg-light-gray">
+  <div class="container">
+    <h2>Our Beliefs</h2>
+    <div class="list">
+      {
+        infoCards.map((card) => {
+          return <LearnMoreCard data={card} />;
+        })
+      }
+    </div>
+  </div>
+</section>
+
+<style>
+  #beliefs .container {
+    padding-top: 1rem;
+  }
+
+  #beliefs .container h2 {
+    font-size: 2.25rem;
+    text-align: center;
+    margin-bottom: 4rem;
+  }
+  #beliefs .container .list {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  @media only screen and (max-width: 768px) {
+    #beliefs .container .list {
+      flex-direction: column;
+    }
+  }
+  @media only screen and (max-width: 992px) {
+  }
+  @media only screen and (max-width: 1200px) {
+  }
+</style>

@@ -1,0 +1,39 @@
+.catechism-card {
+  /* padding: 1rem; */
+  width: 325px;
+  margin: 1rem;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2), 0 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+.title,
+.body,
+.card-footer {
+  padding: 1.5rem;
+}
+
+.title,
+.body {
+  border-bottom: 1px solid var(--black);
+}
+
+.title {
+  font-style: italic;
+  font-size: 1.05rem;
+}
+
+.question-number,
+.answer-title {
+  font-weight: bold;
+}
+
+.proof-number {
+  color: red;
+  font-size: 0.8rem;
+  margin: 0 0.2rem;
+  vertical-align: bottom;
+}
+
+.body p span {
+  display: inline;
+}

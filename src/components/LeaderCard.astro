@@ -2,7 +2,7 @@
 interface Props {
   data: {
     image: string;
-    bio: string;
+    bio?: string;
     name: string;
     office: string;
   };
@@ -13,11 +13,13 @@ const { data } = Astro.props;
 
 <div class="leader-card">
   <div class="top">
-    <div class="overlay">
-      <p>
-        {data?.bio}
-      </p>
-    </div>
+    {
+      data?.bio ? (
+        <div class="overlay">
+          <p>{data?.bio}</p>
+        </div>
+      ) : null
+    }
     <img src={data?.image} alt="" />
   </div>
   <div class="bottom">

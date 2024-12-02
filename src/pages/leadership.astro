@@ -2,32 +2,21 @@
 import LeaderCard from "../components/LeaderCard.astro";
 import PageLayout from "../layouts/PageLayout.astro";
 
-const elders = [
-  {
-    name: "Edgar Ibarra",
-    image: "/images/lvrp-leader-1.jpg",
-    office: "Pastor",
-    bio: `Lorem ipsum dolor sit amet consectetur adipisicing elit. Nulla,quisquam similique veritatis nemo magnam earum sequi mollitia ad incidunt delectus eum corrupti ipsum tenetur sapiente!`,
-  },
+const leaders = [
   {
     name: "Colin Pearson",
-    image: "/images/lvrp-leader-2.jpg",
+    image: "/images/leaders/elder-colin.jpg",
     office: "Ruling Elder",
-    bio: `Lorem ipsum dolor sit amet consectetur adipisicing elit. Nulla,quisquam similique veritatis nemo magnam earum sequi mollitia ad incidunt delectus eum corrupti ipsum tenetur sapiente!`,
   },
-];
-const deacons = [
   {
     name: "Andy Motdoch",
-    image: "/images/lvrp-leader-3.jpg",
+    image: "/images/leaders/deacon-andy.jpg",
     office: "Deacon",
-    bio: `Lorem ipsum dolor sit amet consectetur adipisicing elit. Nulla,quisquam similique veritatis nemo magnam earum sequi mollitia ad incidunt delectus eum corrupti ipsum tenetur sapiente!`,
   },
   {
     name: "Nathan Bell",
-    image: "/images/lvrp-leader-4.jpg",
+    image: "/images/leaders/deacon-nathan.jpg",
     office: "Deacon",
-    bio: `Lorem ipsum dolor sit amet consectetur adipisicing elit. Nulla,quisquam similique veritatis nemo magnam earum sequi mollitia ad incidunt delectus eum corrupti ipsum tenetur sapiente!`,
   },
 ];
 ---
@@ -35,6 +24,7 @@ const deacons = [
 <PageLayout title="Leadership">
   <div class="leadership-blurb">
     <div class="container">
+      <h2>Our Local Church Government</h2>
       <div class="blurb-container">
         <p>
           Lorem ipsum dolor sit amet consectetur adipisicing elit. Maxime ut
@@ -47,24 +37,44 @@ const deacons = [
       </div>
     </div>
   </div>
-  <div class="leadership-section session border border-green-400">
-    <h2>Our Session</h2>
+  <div class="line-bar"></div>
+  <div class="leadership-pastor">
     <div class="container">
-      <div class="leaders-list">
-        {
-          elders.map((elder) => {
-            return <LeaderCard data={elder} />;
-          })
-        }
+      <div class="left">
+        <div class="pic-card">
+          <img src="/images/leaders/pastor-edgar.jpg" alt="" />
+        </div>
+      </div>
+      <div class="right">
+        <div class="bio">
+          <h3>Pastor Edgar Ibarra</h3>
+          <p>
+            Lorem ipsum dolor sit, amet consectetur adipisicing elit.
+            Exercitationem numquam praesentium consectetur architecto quae
+            dolore magnam ab enim commodi at nisi sint nihil ut ducimus expedita
+            cupiditate, magni sequi alias dignissimos. Dolorum voluptatem
+            dignissimos facere enim eius quod asperiores repellendus nulla, aut
+            voluptate, sapiente non!
+          </p>
+          <p>
+            Lorem ipsum dolor sit, amet consectetur adipisicing elit.
+            Exercitationem numquam praesentium consectetur architecto quae
+            dolore magnam ab enim commodi at nisi sint nihil ut ducimus expedita
+            cupiditate, magni sequi alias dignissimos. Dolorum voluptatem
+            dignissimos facere enim eius quod asperiores repellendus nulla, aut
+            voluptate, sapiente non!
+          </p>
+        </div>
       </div>
     </div>
   </div>
-  <div class="leadership-section deacons border border-green-400">
-    <h2>Our Deacons</h2>
+  <div class="line-bar"></div>
+  <div class="leadership-section deacons">
+    <h2>Ruling Elders & Deacons</h2>
     <div class="container">
       <div class="leaders-list">
         {
-          deacons.map((elder) => {
+          leaders.map((elder) => {
             return <LeaderCard data={elder} />;
           })
         }
@@ -74,6 +84,57 @@ const deacons = [
 </PageLayout>
 
 <style>
+  .leadership-pastor .container {
+    display: flex;
+  }
+
+  .leadership-pastor .container .left,
+  .leadership-pastor .container .right {
+    flex: 1;
+  }
+
+  .leadership-pastor .container .left {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .leadership-pastor .container .left .pic-card {
+    width: 70%;
+    height: 70%;
+    border-radius: 15px;
+    overflow: hidden;
+    box-shadow:
+      0 4px 8px rgba(0, 0, 0, 0.2),
+      0 2px 4px rgba(0, 0, 0, 0.2);
+  }
+  .leadership-pastor .container .left .pic-card img {
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+
+  .leadership-pastor .container .right .bio {
+    padding: 1rem;
+  }
+
+  .leadership-pastor .container .right .bio h3 {
+    font-size: 1.5rem;
+    margin-bottom: 1.5rem;
+  }
+
+  .leadership-pastor .container .right .bio p {
+    margin: 1rem 0;
+    line-height: 1.75;
+    font-size: 1.05rem;
+  }
+
+  .leadership-blurb .container h2 {
+    font-size: 1.75rem;
+    margin-bottom: 2rem;
+    text-align: center;
+  }
   .leadership-blurb .blurb-container {
     margin: 0 auto;
     width: 65%;
@@ -89,12 +150,37 @@ const deacons = [
     justify-content: space-around;
     align-items: center;
   }
+
+  .line-divide {
+    width: 65%;
+    margin: 0 auto;
+    border-top: 2px solid var(--dark-gray);
+  }
+
+  .deacons {
+    margin-top: 2rem;
+  }
   @media only screen and (max-width: 768px) {
+    .leadership-pastor .container,
     .leaders-list {
       flex-direction: column;
     }
+
+    .leadership-pastor .container .left .pic-card {
+      width: 70%;
+      height: 70%;
+      margin-bottom: 2rem;
+    }
+
+    .leadership-pastor .container .right .bio h3 {
+      text-align: center;
+    }
   }
   @media only screen and (max-width: 992px) {
+    .leadership-pastor .container .left .pic-card {
+      width: 85%;
+      height: 50%;
+    }
   }
   @media only screen and (max-width: 1200px) {
   }

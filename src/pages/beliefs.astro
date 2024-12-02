@@ -6,60 +6,69 @@ const standards = [
   {
     title: "Reformed Presbyterian Testiomony",
     link: "/beliefs/testimony.html",
+    image: "/images/beliefs/testimony.jpg",
   },
   {
     title: "Westminster Confession",
-    link: "/beliefs/confession.html",
+    link: "/beliefs/westminster-confession.html",
+    image: "/images/beliefs/westminster1.jpg",
   },
   {
     title: "Westminster Shorter Catechism",
     link: "/beliefs/shorter-catechism.html",
+    image: "/images/beliefs/westminster2.jpg",
   },
   {
     title: "Westminster Larger Catechism",
     link: "/beliefs/larger-catechism.html",
+    image: "/images/beliefs/westminster3.jpg",
   },
 ];
 const creeds = [
   {
     title: "Apostles Creed",
     link: "/beliefs/apostles-creed.html",
+    image: "/images/beliefs/apostles.jpg",
   },
   {
     title: "Nicene Creed",
     link: "/beliefs/nicene-creed.html",
+    image: "/images/beliefs/nicaea.jpg",
   },
   {
     title: "Chalcedonian Definition",
-    link: "/beliefs/chalcedonian-definition.html",
+    link: "/beliefs/chalcedon.html",
+    image: "/images/beliefs/chalcedon.jpg",
   },
   {
     title: "Athanasian Creed",
     link: "/beliefs/athanasian-creed.html",
+    image: "/images/beliefs/athanasius.jpg",
   },
 ];
 ---
 
 <PageLayout title="Beliefs">
-  <div class="beliefs-section confessional-standards border border-green-300">
+  <div class="beliefs-section confessional-standards">
     <h2>Confessional Standards</h2>
     <div class="container">
       <div class="belief-list">
         {
           standards.map((standard) => {
-            return <LinkCard data={standard} />;
+            return <LinkCard data={{ ...standard, height: "250px" }} />;
           })
         }
       </div>
     </div>
   </div>
-  <div class="beliefs-section creeds border border-green-300">
+  <div class="line-bar"></div>
+  <div class="beliefs-section creeds">
     <h2>Ecumenical Creeds</h2>
     <div class="container">
       <div class="belief-list">
         {
           creeds.map((standard) => {
-            return <LinkCard data={standard} />;
+            return <LinkCard data={{ ...standard, height: "250px" }} />;
           })
         }
       </div>
