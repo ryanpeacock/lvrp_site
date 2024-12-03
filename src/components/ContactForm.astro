@@ -1,0 +1,151 @@
+---
+
+---
+
+<div>
+  <div class="container">
+    <div class="left">
+      <h2>Send Us A Message</h2>
+      <form name="contact" method="POST" data-netlify="true">
+        <input type="hidden" name="form-name" value="contact" />
+        <div class="group">
+          <input
+            type="text"
+            name="name"
+            placeholder="Name"
+            style={{ marginRight: ".5rem" }}
+          />
+          <input type="email" name="email" placeholder="Email" />
+        </div>
+        <div class="group">
+          <input type="text" name="subject" placeholder="Subject" />
+        </div>
+        <div class="group">
+          <textarea name="message" id="" placeholder="Message" rows="7"
+          ></textarea>
+        </div>
+        <button class="btn btn-big-stone w-full" type="submit">Send</button>
+      </form>
+    </div>
+    <div class="right">
+      <h2>Contact Info</h2>
+      <div class="content">
+        <p>
+          <span>Call Us:</span>
+          <a target="_blank" href="tel:+7029075433">702-907-LIFE (5433)</a>
+        </p>
+        <p>
+          <span>Email:</span>
+          <a target="_blank" href="mailto:lvrpcna@gmail.com"
+            >lvrpcna@gmail.com</a
+          >
+        </p>
+        <p>
+          <span>Location:</span>
+          <a
+            target="_blank"
+            href="https://www.google.com/maps?q=8601+Del+Webb+Blvd,+Las+Vegas,+NV+89134"
+            >8601 Del Webb Blvd, Las Vegas, NV 89134</a
+          >
+        </p>
+        <p><span>Worship Time:</span> 1pm</p>
+        <div class="line-bar"></div>
+        <div class="social-media">
+          <a href="https://www.facebook.com/LVRPCNA" target="_blank">
+            <i class="fab fa-facebook"></i></a
+          >
+          <a href="https://www.youtube.com/@lvrpcna1646" target="_blank"
+            ><i class="fab fa-youtube"></i></a
+          >
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<style>
+  .container {
+    display: flex;
+  }
+  .left,
+  .right {
+    width: 100%;
+  }
+  .container h2 {
+    text-align: center;
+    font-size: 1.7rem;
+    margin-bottom: 2rem;
+  }
+
+  form {
+    /* border: 2px solid pink; */
+  }
+
+  form input,
+  form textarea {
+    width: 100%;
+    padding: 0.75rem;
+    font-size: 1rem;
+    border: 2px solid #ccc;
+    border-radius: 4px;
+    background-color: #f9f9f9;
+    color: #333;
+    outline: none;
+    transition:
+      border-color 0.3s ease,
+      box-shadow 0.3s ease;
+    margin: 0.5rem 0;
+  }
+  .group {
+    display: flex;
+  }
+  .group input,
+  .group textarea {
+    width: 100%;
+  }
+
+  .right .content {
+    width: 85%;
+    margin: 0 auto;
+    padding: 0.5rem;
+    line-height: 1.7;
+  }
+
+  .right .content h4 {
+    font-size: 1.15rem;
+    margin: 0.5rem 0;
+  }
+  .right .content {
+    font-size: 1.05rem;
+  }
+  .right .content p span {
+    display: block;
+    font-weight: 600;
+    font-style: italic;
+  }
+  .right .content p a {
+    color: var(--big-stone) !important;
+  }
+  .social-media {
+    display: flex;
+    justify-content: center;
+  }
+  .social-media i {
+    font-size: 3rem;
+    margin: 1rem;
+    color: var(--big-stone);
+  }
+
+  @media only screen and (max-width: 768px) {
+    .container {
+      flex-direction: column;
+    }
+    .container .right h2 {
+      margin-top: 2rem;
+    }
+  }
+  @media only screen and (max-width: 992px) {
+  }
+  @media only screen and (max-width: 1200px) {
+  }
+</style>

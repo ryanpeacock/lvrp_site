@@ -1,9 +1,62 @@
 ---
 import PageLayout from "../../layouts/PageLayout.astro";
+import { creedItems } from "../../data/siteData";
 ---
 
 <PageLayout title="Athanasian Creed">
-  <h1>Athanasian Creed</h1>
+  <div class="container">
+    <div class="intro">
+      <p>
+        The Athanasian Creed is a profound and detailed statement of the
+        doctrine of the Trinity and the person of Christ. Likely written in the
+        5th or 6th century, it proclaims the equality and unity of the Father,
+        Son, and Holy Spirit, as well as the necessity of holding to this faith
+        for salvation. It stands as a clear and careful articulation of the
+        biblical teaching on God's triune nature, which the Reformed Church
+        wholeheartedly affirms as essential to Christian belief.
+      </p>
+    </div>
+    <div class="line-bar"></div>
+    <div class="creed">
+      {
+        creedItems.map((item, index) => {
+          return (
+            <p>
+              <span class="font-semibold">{index + 1}.</span> {item}
+            </p>
+          );
+        })
+      }
+    </div>
+  </div>
 </PageLayout>
 
-<style></style>
+<style>
+  .container .creed,
+  .intro {
+    width: 50%;
+    margin: 0 auto;
+  }
+
+  .container .creed p,
+  .intro p {
+    line-height: 1.7;
+    font-size: 1.05rem;
+    margin: 0.5rem 0;
+  }
+
+  .line-bar {
+    margin: 3rem auto;
+  }
+
+  @media only screen and (max-width: 768px) {
+    .container .creed,
+    .intro {
+      width: 100%;
+    }
+  }
+  @media only screen and (max-width: 992px) {
+  }
+  @media only screen and (max-width: 1200px) {
+  }
+</style>

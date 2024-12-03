@@ -3,7 +3,63 @@ import PageLayout from "../../layouts/PageLayout.astro";
 ---
 
 <PageLayout title="Chalcedonian Definition">
-  <h1>Chalcedonian Definition</h1>
+  <div class="container">
+    <div class="intro">
+      <p>
+        The Chalcedonian Definition (AD 451) articulates the biblical teaching
+        that Jesus Christ is fully God and fully man, two natures united in one
+        person. This statement defends the truth of Christ’s incarnation against
+        false teachings that sought to either separate or confuse His divine and
+        human natures.
+      </p>
+    </div>
+    <div class="line-bar"></div>
+    <div class="creed">
+      <p>
+        We, then, following the holy Fathers, all with one consent, teach men to
+        confess one and the same Son, our Lord Jesus Christ, the same perfect in
+        Godhead and also perfect in manhood; truly God and truly man, of a
+        reasonable soul and body; consubstantial with the Father according to
+        the Godhead, and consubstantial with us according to the Manhood; in all
+        things like unto us, without sin; begotten before all ages of the Father
+        according to the Godhead, and in these latter days, for us and for our
+        salvation, born of the Virgin Mary, the Mother of God, according to the
+        Manhood; one and the same Christ, Son, Lord, only begotten, to be
+        acknowledged in two natures, unconfusedly, unchangeably, indivisibly,
+        inseparably; the distinction of natures being by no means taken away by
+        the union, but rather the property of each nature being preserved, and
+        concurring in one Person and one Subsistence, not parted or divided into
+        two persons, but one and the same Son, and only begotten, God the Word,
+        the Lord Jesus Christ; as the prophets from the beginning have declared
+        concerning Him, and the Lord Jesus Christ Himself has taught us, and the
+        Creed of the holy Fathers has handed down to us.
+      </p>
+    </div>
+  </div>
 </PageLayout>
 
-<style></style>
+<style>
+  .container .creed,
+  .intro {
+    width: 50%;
+    margin: 0 auto;
+  }
+  .container .creed p,
+  .intro p {
+    line-height: 1.7;
+    font-size: 1.05rem;
+  }
+  .line-bar {
+    margin: 3rem auto;
+  }
+  @media only screen and (max-width: 768px) {
+    .container .creed,
+    .intro {
+      width: 100%;
+    }
+  }
+  @media only screen and (max-width: 992px) {
+  }
+  @media only screen and (max-width: 1200px) {
+  }
+</style>

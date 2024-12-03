@@ -3,7 +3,79 @@ import PageLayout from "../../layouts/PageLayout.astro";
 ---
 
 <PageLayout title="Apostles Creed">
-  <h1>Apostles Creed</h1>
+  <div class="container">
+    <div class="intro">
+      <p>
+        The Apostles' Creed is one of the earliest summaries of Christian
+        belief, often used in teaching to express the core truths of the faith.
+        It affirms the foundational doctrines of Christianity, such as belief in
+        God the Father, the life, death, and resurrection of Jesus Christ, and
+        the work of the Holy Spirit.
+      </p>
+    </div>
+    <div class="line-bar"></div>
+    <div class="creed">
+      <div class="group">
+        <p>I believe in God, the Father Almighty,</p>
+        <p>Maker of heaven and earth.</p>
+      </div>
+      <div class="group">
+        <p>And in Jesus Christ,</p>
+        <p>His only begotten Son, our Lord;</p>
+        <p>who was conceived by the Holy Spirit,</p>
+        <p>born of the Virgin Mary,</p>
+        <p>suffered under Pontius Pilate,</p>
+        <p>was crucified, died, and was buried.</p>
+        <p>He descended into hell.</p>
+        <p>On the third day he rose from the dead;</p>
+        <p>He ascended into heaven,</p>
+        <p>and sits at the right hand of God the Father Almighty;</p>
+        <p>from there he shall come again to judge the living and the dead.</p>
+      </div>
+      <div class="group">
+        <p>I believe in the Holy Spirit,</p>
+        <p>the holy catholic church,</p>
+        <p>the communion of saints,</p>
+        <p>the forgiveness of sins,</p>
+        <p>the resurrection of the body,</p>
+        <p>and the life everlasting.</p>
+      </div>
+      <div class="group">
+        <p>AMEN.</p>
+      </div>
+    </div>
+  </div>
 </PageLayout>
 
-<style></style>
+<style>
+  .container {
+    /* text-align: center; */
+  }
+  .creed,
+  .intro {
+    width: 50%;
+    margin: 0 auto;
+  }
+  .group {
+    margin: 1rem 0;
+  }
+  .line-bar {
+    margin: 4rem auto;
+  }
+
+  .group p,
+  .intro p {
+    font-size: 1.05rem;
+    line-height: 1.7;
+  }
+  @media only screen and (max-width: 768px) {
+    .creed,
+    .intro {
+      width: 100%;
+    }
+  }
+  @media only screen and (max-width: 992px) {
+  }
+  @media only screen and (max-width: 1200px) {
+  }
+</style>

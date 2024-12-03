@@ -13,6 +13,13 @@ const title = sermons[0]?.subtitle;
   <div class="sermon-container p-2 flex flex-wrap w-full lg:w-4/5 mx-auto">
     {sermons.map((sermon) => <SermonItem sermon={sermon} width="45%" />)}
   </div>
+  <div class="flex justify-center items-center">
+    <button class="btn btn-big-stone my-4">
+      <a href={`https://www.sermonaudio.com/series/${slug}`} target="_blank">
+        View on Sermon Audio
+      </a></button
+    >
+  </div>
 </PageLayout>
 
 <style></style>

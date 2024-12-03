@@ -1,47 +1,7 @@
 ---
 import LinkCard from "../components/LinkCard.astro";
+import { bibleStudies, sermonSeries } from "../data/siteData";
 import PageLayout from "../layouts/PageLayout.astro";
-
-const sermonSeries = [
-  {
-    title: "The Gospel of Luke",
-    id: "152601",
-    link: `/sermons/152601`,
-    image: "/images/sermons/gospelofluke.jpg",
-  },
-  {
-    title: "Leviticus",
-    id: "192111",
-    link: `/sermons/192111`,
-    image: "/images/sermons/leviticus.jpg",
-  },
-  {
-    title: "Regulative Principle of Worship",
-    id: "172011",
-    link: `/sermons/172011`,
-    image: "/images/sermons/worship.jpg",
-  },
-];
-const bibleStudies = [
-  {
-    title: "Doctrine of Civil Government",
-    id: "196782",
-    link: `/sermons/196782`,
-    image: "/images/sermons/government.jpg",
-  },
-  {
-    title: "The Doctrine of God",
-    id: "189405",
-    link: `/sermons/189405`,
-    image: "/images/sermons/doctrineofGod.jpg",
-  },
-  {
-    title: "Headcoverings",
-    id: "187243",
-    link: `/sermons/187243`,
-    image: "/images/sermons/headcover.png",
-  },
-];
 ---
 
 <PageLayout title="Sermons">
@@ -51,7 +11,7 @@ const bibleStudies = [
       <div class="sermon-list">
         {
           sermonSeries.map((sermon) => {
-            return <LinkCard data={sermon} />;
+            return <LinkCard data={{ ...sermon, height: "250px" }} />;
           })
         }
       </div>
@@ -64,7 +24,7 @@ const bibleStudies = [
       <div class="sermon-list">
         {
           bibleStudies.map((study) => {
-            return <LinkCard data={study} />;
+            return <LinkCard data={{ ...study, height: "250px" }} />;
           })
         }
       </div>
@@ -80,8 +40,10 @@ const bibleStudies = [
   }
 
   .sermon-list {
-    gap: 25px;
+    gap: 15px;
     display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
   }
   @media only screen and (max-width: 768px) {
     .sermon-list {

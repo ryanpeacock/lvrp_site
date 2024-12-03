@@ -3,7 +3,68 @@ import PageLayout from "../../layouts/PageLayout.astro";
 ---
 
 <PageLayout title="Nicene Creed">
-  <h1>Nicene Creed</h1>
+  <div class="container">
+    <div class="intro">
+      <p>
+        The Nicene Creed was established by the early Church to affirm the
+        divinity of Jesus Christ and the doctrine of the Trinity in response to
+        heresies like Arianism, which denied Christ's full divinity. Written in
+        AD 325 and expanded in AD 381, it emphasizes that the Father, Son, and
+        Holy Spirit are one God in three persons.
+      </p>
+    </div>
+    <div class="line-bar"></div>
+    <div class="group">
+      <p>
+        We believe in one God, the Father Almighty, Maker of heaven and earth,
+        of all things visible and invisible.
+      </p>
+      <p>
+        And in one Lord Jesus Christ, the only-begotten Son of God, begotten of
+        His Father before all worlds; God of God, Light of Light, very God of
+        very God; begotten, not made, being of one substance with the Father, by
+        whom all things were made; Who, for us men and for our salvation, came
+        down from heaven, and was incarnate by the Holy Spirit of the virgin
+        Mary, and was made man; and was crucified also for us under Pontius
+        Pilate; He suffered and was buried; and the third day He rose again,
+        according to the Scriptures; and ascended into heaven, and is seated at
+        the right hand of the Father; and He shall come again, with glory, to
+        judge both the living and the dead; Whose kingdom shall have no end.
+      </p>
+      <p>
+        And we believe in the Holy Spirit, the Lord and Giver of Life; who
+        proceeds from the Father and the Son; who with the Father and the Son
+        together is worshiped and glorified; who spoke by the prophets. And we
+        believe in one holy catholic (universal) and apostolic church. We
+        acknowledge one baptism for the remission of sins; and we look for the
+        resurrection of the dead, and the life of the world to come. Amen.
+      </p>
+    </div>
+  </div>
 </PageLayout>
 
-<style></style>
+<style>
+  .group,
+  .intro {
+    margin: 0 auto;
+    width: 50%;
+  }
+  .group p,
+  .intro p {
+    line-height: 2;
+    margin: 1rem 0;
+  }
+  .line-bar {
+    margin: 3rem auto;
+  }
+  @media only screen and (max-width: 768px) {
+    .group,
+    .intro {
+      width: 100%;
+    }
+  }
+  @media only screen and (max-width: 992px) {
+  }
+  @media only screen and (max-width: 1200px) {
+  }
+</style>
