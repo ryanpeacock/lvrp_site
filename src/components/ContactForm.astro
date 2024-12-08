@@ -1,12 +1,34 @@
 ---
 
+interface Props {
+  success: boolean
+}
+
+const { success} = Astro.props;
+
+console.log({success})
+
+
 ---
 
 <div>
   <div class="container">
     <div class="left">
-      <h2>Send Us A Message</h2>
-      <form name="contact" method="POST" data-netlify="true">
+      {success ? (
+        <div class="form-success">
+      <i class="fas fa-check-circle"></i>
+          <h2>Thank you, <br /> we will get back to you shortly</h2>
+        </div>
+         
+            ) : (
+        <h2>Send Us A Message</h2>
+      <form
+        name="contact"
+        method="POST"
+        data-netlify="true"
+        netlify-honeypot
+        action="/contact?success=true"
+      >
         <input type="hidden" name="form-name" value="contact" />
         <div class="group">
           <input
@@ -26,6 +48,8 @@
         </div>
         <button class="btn btn-big-stone w-full" type="submit">Send</button>
       </form>
+      ) }
+      
     </div>
     <div class="right">
       <h2>Contact Info</h2>
@@ -102,6 +126,24 @@
   .group input,
   .group textarea {
     width: 100%;
+  }
+
+  .form-success {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    /* justify-content: center; */
+    align-items: center;
+    flex-direction: column;
+    text-align: center;
+    line-height: 1.7;
+  }
+
+  .form-success i {
+font-size: 4rem;
+margin-bottom: 2rem;
+color: lightgreen;
+
   }
 
   .right .content {

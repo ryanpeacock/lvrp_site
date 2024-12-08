@@ -1,19 +1,19 @@
 export const scheduleDates = [
   {
     month: "Feburary",
-    date: "17th - 18th",
+    date: "15th - 16th",
   },
   {
-    month: "May",
-    date: "18th - 19th",
+    month: "April",
+    date: "12th - 13th",
   },
   {
-    month: "August",
-    date: "10th - 11th",
+    month: "July",
+    date: "12th - 13th",
   },
   {
-    month: "November",
-    date: "16th - 17th",
+    month: "October",
+    date: "11th - 12th",
   },
 ];
 
@@ -197,4 +197,13 @@ export const bibleStudies = [
     link: `/sermons/162220`,
     image: "/images/sermons/evangelism.jpg",
   },
+];
+
+export const mobileLinks = [
+  { name: "Home", link: "/" },
+  { name: "About", link: "/about" },
+  { name: "Beliefs", link: "/beliefs" },
+  { name: "Leadership", link: "/leadership" },
+  { name: "Sermons", link: "/sermons" },
+  { name: "Contact", link: "/contact" },
 ];

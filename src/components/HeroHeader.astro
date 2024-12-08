@@ -3,28 +3,9 @@ import Header from "../components/Header.astro";
 ---
 
 <section id="hero-section">
+  <Header sticky />
   <div class="outside-container">
     <div class="overlay">
-      <header class="nav-menu">
-        <div class="logo">
-          <a href="/"> <img src="/images/lvrp-logo.png" alt="" /></a>
-        </div>
-        <div class="menu-items">
-          <ul>
-            <li><a href="/">Home</a></li>
-            <li><a href="/about">About</a></li>
-            <li><a href="/beliefs">Beliefs</a></li>
-            <li><a href="/leadership">Leadership</a></li>
-            <li><a href="/sermons">Sermons</a></li>
-            <li><a href="/contact">Contact</a></li>
-            <li>Give</li>
-          </ul>
-        </div>
-        <div class="mobile-menu">
-          <i class="fas fa-bars"></i>
-        </div>
-      </header>
-      <Header hidden sticky={false} />
       <div class="bottom-container">
         <div class="hero-text">
           <p>
@@ -48,13 +29,7 @@ import Header from "../components/Header.astro";
 
     window.addEventListener("scroll", function () {
       if (window.scrollY > headerHeight) {
-        mainNav.classList.add("hide-menu");
-        scrollNav.classList.add("sticky");
-        scrollNav.classList.remove("hide-menu");
       } else {
-        mainNav.classList.remove("hide-menu");
-        scrollNav.classList.remove("sticky");
-        scrollNav.classList.add("hide-menu");
       }
     });
   });
@@ -92,15 +67,6 @@ import Header from "../components/Header.astro";
     width: 300px;
   }
 
-  .nav-menu .mobile-menu {
-    font-size: 2rem;
-    color: white;
-    display: none;
-  }
-  .nav-menu .mobile-menu i:hover {
-    cursor: pointer;
-  }
-
   .nav-menu .menu-items ul {
     list-style: none;
     display: flex;
@@ -123,7 +89,7 @@ import Header from "../components/Header.astro";
     align-items: flex-start;
   }
   #hero-section .outside-container .overlay .hero-text {
-    margin-top: 4rem;
+    margin-top: 15rem;
     width: 50%;
   }
   #hero-section .outside-container .overlay .hero-text p {
@@ -145,10 +111,6 @@ import Header from "../components/Header.astro";
     .nav-menu .menu-items {
       display: none;
     }
-    .nav-menu .mobile-menu {
-      display: block;
-      align-self: flex-end;
-    }
   }
   @media only screen and (max-width: 992px) {
     .container {
@@ -158,7 +120,6 @@ import Header from "../components/Header.astro";
       flex-wrap: wrap;
     }
     #hero-section .outside-container .overlay .hero-text {
-      margin-top: 0;
       width: 85%;
       font-size: 1.5rem;
     }

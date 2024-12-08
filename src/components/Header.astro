@@ -1,5 +1,6 @@
 ---
 import type { boolean } from "astro:schema";
+import { MobileMenu } from "./react-components/MobileMenu";
 
 interface Props {
   hidden?: boolean;
@@ -26,9 +27,7 @@ const { hidden = false, sticky = true } = Astro.props;
       <li>Give</li>
     </ul>
   </div>
-  <div class="mobile-menu">
-    <i class="fas fa-bars"></i>
-  </div>
+  <MobileMenu client:visible />
 </header>
 
 <style>
@@ -46,15 +45,6 @@ const { hidden = false, sticky = true } = Astro.props;
 
   .nav-menu-scroll img {
     width: 175px;
-  }
-
-  .nav-menu-scroll .mobile-menu {
-    font-size: 2rem;
-    color: white;
-    display: none;
-  }
-  .nav-menu-scroll .mobile-menu i:hover {
-    cursor: pointer;
   }
 
   .nav-menu-scroll .menu-items ul {
@@ -87,9 +77,6 @@ const { hidden = false, sticky = true } = Astro.props;
     }
     .nav-menu-scroll .menu-items {
       display: none;
-    }
-    .nav-menu-scroll .mobile-menu {
-      display: block;
     }
   }
   @media only screen and (max-width: 992px) {
