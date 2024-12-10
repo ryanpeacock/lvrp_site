@@ -10,6 +10,7 @@ export const LatestSermons = () => {
     const headers = {
       "Content-Type": "application/json",
       "X-Api-Key": import.meta.env.PUBLIC_SERMON_AUDIO_SECRET,
+      mode: "no-cors",
     };
     try {
       const response = await fetch(url, {
