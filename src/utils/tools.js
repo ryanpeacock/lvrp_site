@@ -5,7 +5,7 @@ export const getSermons = async (pageSize, series = "") => {
   if (series) url = url + `&series=${series}`;
   const headers = {
     "Content-Type": "application/json",
-    "X-Api-Key": import.meta.env.SERMON_AUDIO_SECRET,
+    "X-Api-Key": import.meta.env.PUBLIC_SERMON_AUDIO_SECRET,
   };
   const response = await fetch(url, {
     method: "GET",

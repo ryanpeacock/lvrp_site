@@ -1,19 +1,15 @@
-import React, { useMemo, useState } from "react";
-import CatechismCard from "./CatechismCard";
+import { useMemo, useState } from "react";
+import CatechismCard from "./CatechismCard/CatechismCard";
 
 export const CatechismList = ({ catechismData }) => {
   const [searchText, setSearchText] = useState("");
 
-  const onSearchChange = (event) => {
-    setSearchText(event.target.value);
-  };
+  const onSearchChange = (event) => setSearchText(event.target.value);
 
-  // Compute filtered data dynamically
   const filteredItems = useMemo(() => {
     if (!searchText.trim()) return catechismData;
 
     const lowerCaseSearchTerm = searchText.toLowerCase();
-
     return catechismData.filter((item) => {
       const questionMatches = item?.question
         .toLowerCase()
@@ -21,14 +17,13 @@ export const CatechismList = ({ catechismData }) => {
       const answerMatches = item?.answer?.some((ans) =>
         ans?.toLowerCase().includes(lowerCaseSearchTerm)
       );
-
       return questionMatches || answerMatches;
     });
   }, [searchText, catechismData]);
 
   return (
     <div>
-      <div className="w-2/4 mx-auto mb-6">
+      <div className="w-full sm:w-3/4 md:w-2/4 mx-auto mb-6 mt-5">
         <input
           name="searchText"
           className="w-full px-4 py-2 text-gray-700 bg-white border border-gray-300 rounded-lg shadow-sm"
@@ -37,9 +32,10 @@ export const CatechismList = ({ catechismData }) => {
           onChange={onSearchChange}
         />
       </div>
-      <div className="catechism-container flex items-start flex-wrap justify-center">
+      <div className="flex flex-wrap items-start justify-center">
+        {/* <div className="grid grid-cols-1 sm:grid-cols-[repeat(auto-fit,minmax(350px,1fr))] gap-6 p-4"> */}
         {filteredItems.map((question) => {
-          return <CatechismCard key={question.id} question={question} />;
+          return <CatechismCard question={question} />;
         })}
       </div>
     </div>

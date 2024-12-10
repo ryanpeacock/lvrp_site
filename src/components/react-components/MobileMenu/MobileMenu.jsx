@@ -1,6 +1,6 @@
 import { useState, useEffect } from "react";
 import "./MobileMenu.css";
-import { mobileLinks } from "../../data/siteData";
+import { mobileLinks } from "../../../data/siteData";
 
 export const MobileMenu = ({ isHero = false }) => {
   const [showMobileMenu, setShowMobileMenu] = useState(false);

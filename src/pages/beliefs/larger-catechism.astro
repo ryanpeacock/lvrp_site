@@ -6,12 +6,42 @@ import { CatechismList } from "../../components/react-components/CatechismList";
 
 <PageLayout title="Westminster Larger Catechism">
   <div class="container">
-    <CatechismList catechismData={largerCatechism} client:visible />
+    <div class="intro">
+      <p>
+        The Westminster Larger Catechism is a comprehensive teaching tool
+        designed to provide a deeper and more detailed explanation of the
+        Christian faith. Unlike <a
+          class="italic text-blue-900 inline-block m-0"
+          target="_blank"
+          href="/beliefs/shorter-catechism">the Shorter Catechism</a
+        >, which consists of 107 concise questions and answers for easy
+        memorization, the Larger Catechism expands on these topics with greater
+        depth and theological precision, making it particularly suited for
+        advanced study and instruction. Both catechisms work together to
+        summarize the Bible’s teachings, helping believers grow in their
+        understanding of God, salvation, and Christian living. Our church
+        subscribes to the Larger Catechism as part of its commitment to the
+        rich, Christ-centered heritage of Reformed theology, ensuring that our
+        doctrine and worship remain faithful to Scripture.
+      </p>
+    </div>
+    <CatechismList catechismData={largerCatechism} client:load />
   </div>
 </PageLayout>
 
 <style>
-  .catechism-container {
-    justify-content: center;
+  .intro {
+    width: 65%;
+    margin: 0 auto 4rem auto;
+    text-indent: 2rem;
+    line-height: 1.7;
+  }
+  a {
+    text-indent: 0;
+  }
+  @media only screen and (max-width: 768px) {
+    .intro {
+      width: 100%;
+    }
   }
 </style>

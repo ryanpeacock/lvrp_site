@@ -1,18 +1,37 @@
 ---
 import PageLayout from "../../layouts/PageLayout.astro";
 import { shorterCatechism } from "../../data/shorterCatechism";
-import CatechismCard from "../../components/CatechismCard.astro";
 import { CatechismList } from "../../components/react-components/CatechismList";
 ---
 
 <PageLayout title="Westminster Shorter Catechism">
   <div class="container">
-    <CatechismList catechismData={shorterCatechism} client:visible />
+    <div class="intro">
+      <p>
+        The Westminster Shorter Catechism is a teaching tool consisting of 107
+        questions and answers designed to clearly explain the core beliefs of
+        the Christian faith. A catechism is used to help believers understand
+        and memorize foundational truths about God, salvation, Scripture, and
+        Christian living. Our church subscribes to this catechism because it
+        faithfully summarizes the teachings of the Bible, providing a structured
+        way to grow in our understanding of how to glorify God and enjoy Him
+        forever. This commitment ensures that our worship and teaching remain
+        Christ-centered and rooted in the historic Reformed tradition.
+      </p>
+    </div>
+    <CatechismList catechismData={shorterCatechism} client:load />
   </div>
 </PageLayout>
 
 <style>
-  .catechism-container {
-    justify-content: center;
+  .intro {
+    width: 65%;
+    margin: 0 auto 4rem auto;
+    text-indent: 2rem;
+  }
+  @media only screen and (max-width: 768px) {
+    .intro {
+      width: 100%;
+    }
   }
 </style>

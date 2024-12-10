@@ -3,7 +3,7 @@ import Header from "../components/Header.astro";
 ---
 
 <section id="hero-section">
-  <Header sticky />
+  <Header transparent sticky />
   <div class="outside-container">
     <div class="overlay">
       <div class="bottom-container">
@@ -19,21 +19,6 @@ import Header from "../components/Header.astro";
     </div>
   </div>
 </section>
-
-<script>
-  document.addEventListener("DOMContentLoaded", function () {
-    var mainNav = document.querySelector(".nav-menu");
-    var scrollNav = document.querySelector(".nav-menu-scroll");
-    var header = document.querySelector("#hero-section");
-    var headerHeight = header.scrollHeight;
-
-    window.addEventListener("scroll", function () {
-      if (window.scrollY > headerHeight) {
-      } else {
-      }
-    });
-  });
-</script>
 
 <style>
   #hero-section .outside-container {

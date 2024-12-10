@@ -1230,7 +1230,8 @@ export const shorterCatechism = [
     question:
       "Did God leave all mankind to perish in the estate of sin and misery?",
     answer: [
-      "God having, out of his mere good pleasure, from all eternity, elected some to everlasting life [a,] did enter into a covenant of grace, to deliver them out of the estate of sin and misery, and to bring them into an estate of salvation by a Redeemer",
+      "God having, out of his mere good pleasure, from all eternity, elected some to everlasting life",
+      "did enter into a covenant of grace, to deliver them out of the estate of sin and misery, and to bring them into an estate of salvation by a Redeemer",
     ],
     proofTexts: [
       [

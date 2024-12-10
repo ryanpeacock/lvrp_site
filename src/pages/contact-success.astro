@@ -1,0 +1,19 @@
+---
+import ContactForm from "../components/ContactForm.astro";
+import LocationAndTimes from "../components/LocationAndTimes.astro";
+import PageLayout from "../layouts/PageLayout.astro";
+---
+
+<PageLayout title="Contact">
+  <ContactForm success={true} />
+  <LocationAndTimes />
+</PageLayout>
+
+<style>
+  @media only screen and (max-width: 768px) {
+  }
+  @media only screen and (max-width: 992px) {
+  }
+  @media only screen and (max-width: 1200px) {
+  }
+</style>

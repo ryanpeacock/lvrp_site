@@ -1,23 +1,29 @@
 ---
-import type { boolean } from "astro:schema";
-import { MobileMenu } from "./react-components/MobileMenu";
+import { MobileMenu } from "./react-components/MobileMenu/MobileMenu.jsx";
 
 interface Props {
-  hidden?: boolean;
+  transparent?: boolean;
   sticky?: boolean;
 }
 
-const { hidden = false, sticky = true } = Astro.props;
+const { transparent = false, sticky = true } = Astro.props;
 ---
 
 <header
-  class={`nav-menu-scroll ${sticky ? "sticky top-0" : ""} ${hidden ? "hide-menu" : ""}`}
+  class={`nav-menu-scroll ${sticky ? "sticky top-0" : ""} ${transparent ? "opacity-background" : ""}`}
 >
   <div class="logo">
-    <a href="/"> <img src="/images/lvrp-logo.png" alt="" /></a>
+    <a href="/">
+      <img
+        id="logo-image"
+        class={`${transparent ? "bigger-image" : ""}`}
+        src="/images/lvrp-logo.png"
+        alt=""
+      /></a
+    >
   </div>
   <div class="menu-items">
-    <ul>
+    <ul id="nav-list" class={`${transparent ? "bigger-font" : ""}`}>
       <li><a href="/">Home</a></li>
       <li><a href="/about.html">About</a></li>
       <li><a href="/beliefs.html">Beliefs</a></li>
@@ -30,6 +36,27 @@ const { hidden = false, sticky = true } = Astro.props;
   <MobileMenu client:visible />
 </header>
 
+<script>
+  document.addEventListener("DOMContentLoaded", function () {
+    var scrollNav = document.querySelector(".nav-menu-scroll");
+    var headerLogo = document.querySelector("#logo-image");
+    var navList = document.querySelector("#nav-list");
+    var headerHeight = scrollNav.scrollHeight;
+
+    window.addEventListener("scroll", function () {
+      if (window.scrollY > headerHeight) {
+        scrollNav.classList.remove("opacity-background");
+        headerLogo.classList.remove("bigger-image");
+        navList.classList.remove("bigger-font");
+      } else {
+        scrollNav.classList.add("opacity-background");
+        headerLogo.classList.add("bigger-image");
+        navList.classList.add("bigger-font");
+      }
+    });
+  });
+</script>
+
 <style>
   /* Nav-Menu Scroll */
   .nav-menu-scroll {
@@ -40,7 +67,7 @@ const { hidden = false, sticky = true } = Astro.props;
     align-items: center;
     width: 100%;
     margin: 0;
-    transition: opacity 0.5s ease-in-out;
+    transition: all 0.7s ease-in-out;
   }
 
   .nav-menu-scroll img {
@@ -69,10 +96,10 @@ const { hidden = false, sticky = true } = Astro.props;
 
   @media only screen and (max-width: 768px) {
     .nav-menu-scroll img {
-      width: 215px;
+      width: 215px !important;
     }
     .nav-menu-scroll {
-      padding: 1rem 2rem;
+      padding: 1rem 2rem !important;
       flex-wrap: no-wrap;
     }
     .nav-menu-scroll .menu-items {

@@ -4,9 +4,7 @@ interface Props {
   success: boolean
 }
 
-const { success} = Astro.props;
-
-console.log({success})
+const { success } = Astro.props;
 
 
 ---
@@ -17,7 +15,7 @@ console.log({success})
       {success ? (
         <div class="form-success">
       <i class="fas fa-check-circle"></i>
-          <h2>Thank you, <br /> we will get back to you shortly</h2>
+          <h2>Thank you for contacting us. <br /> We will get back to you shortly</h2>
         </div>
          
             ) : (
@@ -27,7 +25,7 @@ console.log({success})
         method="POST"
         data-netlify="true"
         netlify-honeypot
-        action="/contact?success=true"
+        action="/contact-success"
       >
         <input type="hidden" name="form-name" value="contact" />
         <div class="group">

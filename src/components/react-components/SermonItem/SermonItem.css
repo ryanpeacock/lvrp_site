@@ -1,0 +1,69 @@
+.sermon-item {
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2), 0 2px 4px rgba(0, 0, 0, 0.2);
+  padding: 1rem;
+  border-radius: 10px;
+  margin: 1.5rem 1rem;
+  transition: transform 0.7s ease-in-out;
+}
+.sermon-item:hover {
+  transform: scale(1.02);
+  cursor: pointer;
+}
+
+.sermon-item .top {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 0.8rem;
+  line-height: 1.5;
+}
+
+.sermon-item .top .left {
+  display: flex;
+  align-items: center;
+}
+
+.sermon-item .top .right {
+  text-align: right;
+}
+
+.sermon-item .top .left .speaker-img {
+  width: 60px;
+  height: 60px;
+  border-radius: 30px;
+  border: 3px solid var(--husk);
+  object-fit: cover;
+  object-position: center;
+  margin-right: 0.5rem;
+}
+
+.sermon-item .top .left .sermon-info {
+  display: flex;
+  flex-direction: column;
+}
+
+.sermon-item .top .left .sermon-info .title {
+  font-size: 1.02rem;
+  font-weight: bold;
+}
+
+.sermon-item .top .right .other-info {
+  display: flex;
+  flex-direction: column;
+}
+
+.sermon-item audio {
+  display: block;
+  width: 95%;
+  margin: 1.5rem auto;
+}
+@media only screen and (max-width: 768px) {
+  .sermon-item {
+    width: 100% !important;
+    margin: 1.5rem 0;
+  }
+}
+@media only screen and (max-width: 992px) {
+}
+@media only screen and (max-width: 1200px) {
+}
