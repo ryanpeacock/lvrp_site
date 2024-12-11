@@ -1,8 +1,9 @@
-import { useState, useEffect } from "react";
+import { useState } from "react";
 import "./MobileMenu.css";
 import { mobileLinks } from "../../../data/siteData";
+import GiveModal from "../GiveModal/GiveModal";
 
-export const MobileMenu = ({ isHero = false }) => {
+const MobileMenu = ({ isHero = false }) => {
   const [showMobileMenu, setShowMobileMenu] = useState(false);
 
   const showMenuToggle = () => {
@@ -13,7 +14,7 @@ export const MobileMenu = ({ isHero = false }) => {
   };
 
   return (
-    <>
+    <div class="block sm:hidden">
       <div
         style={{
           opacity: showMobileMenu ? 0.95 : 0,
@@ -22,9 +23,21 @@ export const MobileMenu = ({ isHero = false }) => {
         }}
         className="mobile-menu-display"
       >
-        <i onClick={hideMenuToggle} className="close-icon fas fa-times"></i>
+        <i
+          onClick={hideMenuToggle}
+          className="close-icon-mobile fas fa-times"
+        ></i>
         <div className="menu-links">
           {mobileLinks.map((item, index) => {
+            if (item.name === "Give") {
+              return (
+                <span key={23}>
+                  <a onClick={(e) => e.preventDefault()} href="#">
+                    <GiveModal client:load />
+                  </a>
+                </span>
+              );
+            }
             return (
               <span key={index}>
                 <a onClick={hideMenuToggle} href={item.link}>
@@ -41,6 +54,8 @@ export const MobileMenu = ({ isHero = false }) => {
       >
         <i className="fas fa-bars"></i>
       </div>
-    </>
+    </div>
   );
 };
+
+export default MobileMenu;

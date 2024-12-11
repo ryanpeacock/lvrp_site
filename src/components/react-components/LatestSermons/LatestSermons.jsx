@@ -5,12 +5,10 @@ import SermonItem from "../SermonItem/SermonItem";
 export const LatestSermons = () => {
   const [sermons, setSermons] = useState([]);
   const fetchSermons = async () => {
-    const url =
-      "https://api.sermonaudio.com/v2/node/sermons?&requireAudio=true&includePublished=true&page=1&lite=true&liteBroadcaster=true&pageSize=4&broadcasterID=lasvegasrpc";
+    const url = "/api/sermons";
     const headers = {
       "Content-Type": "application/json",
-      "X-Api-Key": import.meta.env.PUBLIC_SERMON_AUDIO_SECRET,
-      mode: "no-cors",
+      "X-API-Secret": import.meta.env.PUBLIC_API_ACCESS_SECRET,
     };
     try {
       const response = await fetch(url, {

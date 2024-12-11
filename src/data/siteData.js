@@ -21,36 +21,30 @@ export const infoCards = [
   {
     title: "Our Doctrine",
     image: "/images/westminster_standards.jpg",
-    text: `Lorem ipsum dolor sit amet consectetur adipisicing elit. Soluta
-              assumenda fuga temporibus velit! Voluptate iste aperiam odit
-              maxime non? Explicabo.`,
-    link: "/beliefs.html",
+    text: `The Word of God is our sole infallible rule of faith. We affirm the Westminster Confession of Faith and Catechisms as subordinate doctrinal standards, recognizing them as faithful and accurate summaries of the teachings of Holy Scripture.`,
+    link: "/beliefs",
   },
   {
     title: "Our Worship",
     image: "/images/about/singing.jpg",
-    text: `Lorem ipsum dolor sit amet consectetur adipisicing elit. Soluta
-              assumenda fuga temporibus velit! Voluptate iste aperiam odit
-              maxime non? Explicabo.`,
-    link: "/about.html",
+    text: `Our worship is centered on the Word of God, which shapes and guides all we do. Each Lord's Day, we read, preach, and sing God's Word, seeking to honor Him through worship that follows His commands, as expressed in the regulative principle of worship`,
+    link: "/about",
   },
   {
     title: "Our Denomination",
     image: "/images/lvrp-pic-1a.jpg",
-    text: `Lorem ipsum dolor sit amet consectetur adipisicing elit. Soluta
-              assumenda fuga temporibus velit! Voluptate iste aperiam odit
-              maxime non? Explicabo.`,
+    text: `We are a congregation of the Reformed Presbyterian Church of North America (RPCNA), a historic denomination committed to the authority of Scripture, the Reformed faith, and the kingship of Jesus Christ over all of life.`,
     link: "https://www.reformedpresbyterian.org/",
     external: true,
   },
 ];
 
 export const pageImageMap = {
-  About: "lvrp-pic-1.jpg",
-  Beliefs: "lvrp-pic-2.jpg",
+  About: "lvrp-pic-1a.jpg",
+  Beliefs: "westminster_standards.jpg",
   Contact: "lvrp-pic-3.jpg",
-  Leadership: "lvrp-pic-4.jpg",
-  Sermons: "lvrp-pic-1.jpg",
+  Leadership: "about/presbyterian.webp",
+  Sermons: "about/preaching.jpg",
   // Beliefs
   "Reformed Presbyterian Testimony": "beliefs/testimony.jpg",
   "Westminster Confession": "beliefs/westminster1.jpg",
@@ -206,4 +200,5 @@ export const mobileLinks = [
   { name: "Leadership", link: "/leadership" },
   { name: "Sermons", link: "/sermons" },
   { name: "Contact", link: "/contact" },
+  { name: "Give", link: "#" },
 ];

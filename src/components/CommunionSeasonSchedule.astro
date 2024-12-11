@@ -7,12 +7,15 @@ import { scheduleDates } from "../data/siteData";
     <div class="container">
       <h2>2025 Communion Season Schedule</h2>
       <p class="communion-summary">
-        Lorem ipsum dolor sit amet consectetur adipisicing elit. Harum,
-        voluptate! Autem, error officiis ipsam expedita libero unde dignissimos
-        saepe quaerat nisi facilis eligendi quidem consequatur pariatur a omnis
-        ipsum excepturi!
+        We practice session-controlled communion, inviting those outside our
+        congregation to partake following an interview with the elders. Eligible
+        participants must be members in good standing of the RPCNA, a NAPARC
+        church, or another faithful Reformed church, with a credible profession
+        of faith and baptism. Our quarterly communion seasons include a
+        preparatory service on Saturday and the Lord’s Supper on Sunday,
+        celebrated at a table with a shared loaf and common cup.
       </p>
-      <a href="/about.html" class="btn btn-sycamore">Learn More</a>
+      <a href="/about" class="btn btn-sycamore">Learn More</a>
       <div class="date-list">
         {
           scheduleDates.map((date, index) => {
@@ -63,7 +66,7 @@ import { scheduleDates } from "../data/siteData";
   }
 
   #communion-section .overlay .container .communion-summary {
-    width: 55%;
+    width: 65%;
     margin-bottom: 1rem;
     color: lightgray;
     line-height: 1.75;

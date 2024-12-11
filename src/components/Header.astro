@@ -1,5 +1,6 @@
 ---
-import { MobileMenu } from "./react-components/MobileMenu/MobileMenu.jsx";
+import GiveModal from "./react-components/GiveModal/GiveModal";
+import MobileMenu from "./react-components/MobileMenu/MobileMenu.jsx";
 
 interface Props {
   transparent?: boolean;
@@ -25,15 +26,15 @@ const { transparent = false, sticky = true } = Astro.props;
   <div class="menu-items">
     <ul id="nav-list" class={`${transparent ? "bigger-font" : ""}`}>
       <li><a href="/">Home</a></li>
-      <li><a href="/about.html">About</a></li>
-      <li><a href="/beliefs.html">Beliefs</a></li>
-      <li><a href="/leadership.html">Leadership</a></li>
-      <li><a href="/sermons.html">Sermons</a></li>
-      <li><a href="/contact.html">Contact</a></li>
-      <li>Give</li>
+      <li><a href="/about">About</a></li>
+      <li><a href="/beliefs">Beliefs</a></li>
+      <li><a href="/leadership">Leadership</a></li>
+      <li><a href="/sermons">Sermons</a></li>
+      <li><a href="/contact">Contact</a></li>
+      <li class="hidden sm:block"><GiveModal client:load /></li>
     </ul>
   </div>
-  <MobileMenu client:visible />
+  <MobileMenu client:load />
 </header>
 
 <script>

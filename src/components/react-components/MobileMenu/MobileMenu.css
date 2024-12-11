@@ -38,13 +38,13 @@
   }
 }
 
-.mobile-menu-display .close-icon {
+.mobile-menu-display .close-icon-mobile {
   margin-right: 3rem;
   margin-top: 1rem;
   align-self: flex-end;
   font-size: 2rem;
 }
-.mobile-menu-display .close-icon:hover {
+.mobile-menu-display .close-icon-mobile:hover {
   cursor: pointer;
 }
 
