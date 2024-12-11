@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import "./GiveModal.css";
 
 export default function GiveModal() {
@@ -6,6 +6,23 @@ export default function GiveModal() {
   const onToggleModal = () => {
     setShowGiveModal(!showGiveModal);
   };
+
+  const onClickOutside = (e) => {
+    if (e.target.classList.contains("give-overlay")) {
+      setShowGiveModal(false);
+    }
+  };
+
+  useEffect(() => {
+    // Attach the event listener when the modal is shown
+    if (showGiveModal) {
+      document.addEventListener("mousedown", onClickOutside);
+    }
+    return () => {
+      // Cleanup the event listener
+      document.removeEventListener("mousedown", onClickOutside);
+    };
+  }, [showGiveModal]);
   return (
     <>
       <span onClick={onToggleModal}>Give</span>
