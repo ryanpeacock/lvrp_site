@@ -2,34 +2,10 @@ export const prerender = false;
 import type { APIRoute } from "astro";
 
 export const GET: APIRoute = async ({ request }) => {
-  let origin = request.headers.get("Origin");
-  const secretHeader = request.headers.get("X-API-Secret");
-
-  // List of allowed origins
-  const allowedOrigins = [
-    "https://lvrpsite.netlify.app", // Production site
-    "http://localhost:4321", // Local development
-  ];
-
-  // In development, allow `null` origins.
-  if (import.meta.env.MODE === "development") {
-    if (!origin) origin = "local";
-    allowedOrigins.push("local");
-  }
-
-  // Validate Origin
-  if (!allowedOrigins.includes(origin || "")) {
-    return new Response(
-      JSON.stringify({ error: "Forbidden - Invalid Origin" }),
-      {
-        status: 403,
-        headers: { "Content-Type": "application/json" },
-      }
-    );
-  }
-
   // Validate Secret Token
+  const secretHeader = request.headers.get("X-API-Secret");
   const validSecret = import.meta.env.PUBLIC_API_ACCESS_SECRET || "";
+
   if (secretHeader !== validSecret) {
     return new Response(
       JSON.stringify({ error: "Unauthorized - Invalid Secret" }),
@@ -46,7 +22,7 @@ export const GET: APIRoute = async ({ request }) => {
       "https://api.sermonaudio.com/v2/node/sermons?&requireAudio=true&includePublished=true&page=1&lite=true&liteBroadcaster=true&pageSize=4&broadcasterID=lasvegasrpc",
       {
         headers: {
-          "X-Api-Key": import.meta.env.PUBLIC_SERMON_AUDIO_SECRET || "", // Access your secret API key securely
+          "X-Api-Key": import.meta.env.PUBLIC_SERMON_AUDIO_SECRET || "", // Securely access your API key
         },
       }
     );
@@ -68,8 +44,6 @@ export const GET: APIRoute = async ({ request }) => {
       status: 200,
       headers: {
         "Content-Type": "application/json",
-        "Access-Control-Allow-Origin": origin || "", // Reflect the origin that made the request
-        "Access-Control-Allow-Methods": "GET",
       },
     });
   } catch (error) {
