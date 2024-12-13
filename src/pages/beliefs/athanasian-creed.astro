@@ -17,12 +17,13 @@ import { creedItems } from "../../data/siteData";
       </p>
     </div>
     <div class="line-bar"></div>
-    <div class="creed">
+    <div class="creed text-slate-700">
       {
         creedItems.map((item, index) => {
           return (
             <p>
-              <span class="font-semibold">{index + 1}.</span> {item}
+              <span class="font-semibold text-slate-950">{index + 1}.</span>{" "}
+              {item}
             </p>
           );
         })
@@ -38,11 +39,15 @@ import { creedItems } from "../../data/siteData";
     margin: 0 auto;
   }
 
+  .creed {
+    font-family: "Trykker", serif;
+  }
+
   .container .creed p,
   .intro p {
     line-height: 1.7;
     font-size: 1.05rem;
-    margin: 0.5rem 0;
+    margin: 1rem 0;
   }
 
   .line-bar {

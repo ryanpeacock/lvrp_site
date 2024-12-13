@@ -1,9 +1,20 @@
 ---
+import ConfessionOfFaith from "../../components/react-components/ConfessionOfFaith/ConfessionOfFaith";
 import PageLayout from "../../layouts/PageLayout.astro";
 ---
 
 <PageLayout title="Westminster Confession">
-  <h1>Westminster Confession</h1>
+  <div class="container">
+    <ConfessionOfFaith />
+  </div>
 </PageLayout>
+
+<script
+  src="https://www.biblegateway.com/public/link-to-us/tooltips/bglinks.js"
+  type="text/javascript"></script>
+<script type="text/javascript">
+  BGLinks.version = "KJV";
+  BGLinks.linkVerses();
+</script>
 
 <style></style>
