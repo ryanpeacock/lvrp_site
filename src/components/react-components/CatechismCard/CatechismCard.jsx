@@ -1,47 +1,44 @@
+import "./CatechismCard.css";
+
 const CatechismCard = ({ question }) => {
   return (
-    <div className="w-full md:w-[350px] mx-3 p-6 bg-white rounded-lg shadow-md my-4">
-      {/* Question Section */}
-      <div className="mb-4">
-        <h2 className="text-lg font-semibold text-gray-800">
-          Question {question.id}: {question.question}
-        </h2>
+    <>
+      <div id={`question-${question.id}`} class="p-2 catechism-card">
+        {/* <div class="border border-black p-2"> */}
+        <div className="top-question mb-2 text-lg">
+          <span class="font-semibold">{`Question ${question.id}:`}</span>{" "}
+          <span class="text-gray-700">{question.question}</span>
+        </div>
+        <div className="answer leading-relaxed text-lg">
+          <span class="font-semibold">Answer: </span>
+          {question.answer.map((item, index) => {
+            return (
+              <>
+                <span class="text-gray-700">{item}</span>
+                <span class="align-sub font-semibold text-xs mx-0.5 text-[#84743c]">
+                  {index + 1}
+                </span>
+              </>
+            );
+          })}
+        </div>
+        <div className="proof-texts my-3 text-[#84743c] text-sm italic">
+          {question?.proofTexts?.map((item, index) => {
+            return (
+              <>
+                <span class="font-semibold mr-1 text-sm text-slate-900">
+                  {index + 1}
+                </span>
+                {item.map((proof) => {
+                  return <span>{`${proof.book} ${proof.verse}, `}</span>;
+                })}
+              </>
+            );
+          })}
+        </div>
       </div>
-
-      {/* Answer Section */}
-      <div className="mb-4">
-        <h3 className="text-lg font-medium text-gray-700 mb-2">Answer:</h3>
-        <p className="text-gray-600">
-          {question.answer.map((line, index) => (
-            <span key={index} className="mr-1">
-              {line}{" "}
-              <span className="font-bold text-xs text-red-400 align-sub ">
-                {index + 1}
-              </span>
-            </span>
-          ))}
-        </p>
-      </div>
-
-      {/* Proof Texts Section */}
-      {/* <div>
-        <h3 className="text-lg font-medium text-gray-700">Proof Texts:</h3>
-        {question.proofTexts.map((proofGroup, groupIndex) => (
-          <div key={groupIndex} className="mt-2">
-            <ul className="list-disc pl-5">
-              {proofGroup.map((proof, proofIndex) => (
-                <li key={proofIndex} className="text-gray-600">
-                  <span className="font-medium text-gray-800">
-                    {proof.book} {proof.verse}
-                  </span>
-                  {proof.text && <span>: {proof.text}</span>}
-                </li>
-              ))}
-            </ul>
-          </div>
-        ))}
-      </div> */}
-    </div>
+      {/* <div className="line-bar"></div> */}
+    </>
   );
 };
 
