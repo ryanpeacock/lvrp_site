@@ -3,8 +3,7 @@ import "./CatechismCard.css";
 const CatechismCard = ({ question }) => {
   return (
     <>
-      <div id={`question-${question.id}`} class="p-2 catechism-card">
-        {/* <div class="border border-black p-2"> */}
+      <div id={`question-${question.id}`} class="p-2 catechism-card w-full">
         <div className="top-question mb-2 text-lg">
           <span class="font-semibold">{`Question ${question.id}:`}</span>{" "}
           <span class="text-gray-700">{question.question}</span>
@@ -13,12 +12,12 @@ const CatechismCard = ({ question }) => {
           <span class="font-semibold">Answer: </span>
           {question.answer.map((item, index) => {
             return (
-              <>
+              <div class="inline break-words">
                 <span class="text-gray-700">{item}</span>
                 <span class="align-sub font-semibold text-xs mx-0.5 text-[#84743c]">
                   {index + 1}
                 </span>
-              </>
+              </div>
             );
           })}
         </div>
