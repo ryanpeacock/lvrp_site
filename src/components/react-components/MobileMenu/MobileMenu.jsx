@@ -1,6 +1,6 @@
 import { useState } from "react";
 import "./MobileMenu.css";
-import { mobileLinks } from "../../../data/siteData";
+import { menuLinks } from "../../../data/siteData";
 import GiveModal from "../GiveModal/GiveModal";
 
 const MobileMenu = ({ isHero = false }) => {
@@ -28,7 +28,7 @@ const MobileMenu = ({ isHero = false }) => {
           className="close-icon-mobile fas fa-times"
         ></i>
         <div className="menu-links">
-          {mobileLinks.map((item, index) => {
+          {menuLinks.map((item, index) => {
             if (item.name === "Give") {
               return (
                 <span key={23}>

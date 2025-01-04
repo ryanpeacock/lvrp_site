@@ -193,12 +193,13 @@ export const bibleStudies = [
   },
 ];
 
-export const mobileLinks = [
+export const menuLinks = [
   { name: "Home", link: "/" },
   { name: "About", link: "/about" },
   { name: "Beliefs", link: "/beliefs" },
   { name: "Leadership", link: "/leadership" },
   { name: "Sermons", link: "/sermons" },
   { name: "Contact", link: "/contact" },
+  { name: "Communion Seasons", link: "/#communion-section" },
   { name: "Give", link: "#" },
 ];

@@ -1,4 +1,5 @@
 ---
+import { menuLinks } from "../data/siteData";
 import GiveModal from "./react-components/GiveModal/GiveModal";
 import MobileMenu from "./react-components/MobileMenu/MobileMenu.jsx";
 
@@ -25,13 +26,22 @@ const { transparent = false, sticky = true } = Astro.props;
   </div>
   <div class="menu-items">
     <ul id="nav-list" class={`${transparent ? "bigger-font" : ""}`}>
-      <li><a href="/">Home</a></li>
-      <li><a href="/about">About</a></li>
-      <li><a href="/beliefs">Beliefs</a></li>
-      <li><a href="/leadership">Leadership</a></li>
-      <li><a href="/sermons">Sermons</a></li>
-      <li><a href="/contact">Contact</a></li>
-      <li class="hidden sm:block"><GiveModal client:load /></li>
+      {
+        menuLinks.map((item) => {
+          if (item.name === "Give") {
+            return (
+              <li class="hidden sm:block">
+                <GiveModal client:load />
+              </li>
+            );
+          }
+          return (
+            <li>
+              <a href={item.link}>{item.name}</a>
+            </li>
+          );
+        })
+      }
     </ul>
   </div>
   <MobileMenu client:load />
