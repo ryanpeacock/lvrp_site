@@ -5,6 +5,20 @@ import PageLayout from "../../layouts/PageLayout.astro";
 
 <PageLayout title="Westminster Confession">
   <div class="container">
+    <div class="intro leading-relaxed">
+      <p>
+        The Westminster Confession of Faith is a comprehensive statement of
+        biblical doctrine crafted to articulate the core beliefs of the
+        Christian faith. This historic confession serves as a guiding framework
+        for understanding God’s sovereignty, salvation through Christ, the
+        authority of Scripture, and the purpose of Christian living. Our church
+        subscribes to the Westminster Confession because it faithfully reflects
+        the teachings of the Bible, grounding us in the Reformed tradition while
+        providing clarity and depth to our faith. By embracing this confession,
+        we commit to worship and teaching that are Christ-centered, biblically
+        sound, and rooted in a rich theological heritage.
+      </p>
+    </div>
     <ConfessionOfFaith />
   </div>
 </PageLayout>
@@ -17,4 +31,19 @@ import PageLayout from "../../layouts/PageLayout.astro";
   BGLinks.linkVerses();
 </script>
 
-<style></style>
+<style>
+  .container {
+    width: 100%;
+  }
+  .intro {
+    width: 65%;
+    margin: 0 auto 4rem auto;
+    text-indent: 2rem;
+  }
+
+  @media only screen and (max-width: 768px) {
+    .intro {
+      width: 100%;
+    }
+  }
+</style>
