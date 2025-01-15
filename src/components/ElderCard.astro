@@ -1,0 +1,37 @@
+---
+interface Props {
+  data: {
+    image: string;
+    bio?: string;
+    name: string;
+    office: string;
+  };
+}
+
+const { data } = Astro.props;
+---
+
+<div
+  class="elder-item flex flex-col md:flex-row w-11/12 md:w-3/4 mx-auto p-6 shadow-lg rounded-lg bg-white my-20"
+>
+  <div class="left flex-shrink-0 mx-auto md:mx-0">
+    <img
+      class="w-32 h-32 md:w-44 md:h-44 rounded-full shadow-md border-4 border-[#b5964f] object-cover"
+      src={data.image}
+      alt={data.name}
+    />
+  </div>
+  <div class="right flex-grow mt-4 md:mt-0 md:pl-6 text-center md:text-left">
+    <div class="title mb-3">
+      <h3 class="text-xl md:text-2xl font-bold text-gray-800">{data.name}</h3>
+      <span class="italic text-gray-500">{data.office}</span>
+    </div>
+    <div class="bio text-gray-700 leading-relaxed">
+      <p>
+        {data.bio}
+      </p>
+    </div>
+  </div>
+
+  <style></style>
+</div>

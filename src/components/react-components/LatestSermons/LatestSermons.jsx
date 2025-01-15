@@ -27,7 +27,9 @@ export const LatestSermons = () => {
   return (
     <section id="media-section">
       <div className="container">
-        <h2>Latest Sermons</h2>
+        <h2 class="text-4xl font-bold text-center mb-12 text-gray-800">
+          Latest Sermons
+        </h2>
         <div className="sermon-list">
           {sermons.map((sermon) => (
             <SermonItem sermon={sermon} />

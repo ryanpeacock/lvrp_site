@@ -50,8 +50,11 @@ const creeds = [
 
 <PageLayout title="Beliefs">
   <div class="beliefs-section confessional-standards">
-    <h2>Confessional Standards</h2>
     <div class="container">
+      <h2 class="text-4xl font-bold text-center mb-20 text-gray-800">
+        Confessional Standards
+      </h2>
+
       <div class="belief-list">
         {
           standards.map((standard) => {
@@ -62,9 +65,11 @@ const creeds = [
     </div>
   </div>
   <div class="line-bar"></div>
-  <div class="beliefs-section creeds">
-    <h2>Ecumenical Creeds</h2>
+  <div class="beliefs-section creeds mb-16">
     <div class="container">
+      <h2 class="text-4xl font-bold text-center mb-20 text-gray-800">
+        Ecumenical Creeds
+      </h2>
       <div class="belief-list">
         {
           creeds.map((standard) => {
@@ -77,12 +82,6 @@ const creeds = [
 </PageLayout>
 
 <style>
-  .beliefs-section h2 {
-    margin-top: 3rem;
-    font-size: 2rem;
-    text-align: center;
-  }
-
   .belief-list {
     gap: 15px;
     display: flex;

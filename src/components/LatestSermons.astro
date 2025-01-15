@@ -7,7 +7,9 @@ const sermons = await getSermons(4);
 
 <section id="media-section">
   <div class="container">
-    <h2>Latest Sermons</h2>
+    <h2 class="text-4xl font-bold text-center mb-8 text-gray-800">
+      Latest Sermons
+    </h2>
     <div class="sermon-list">
       {sermons.map((sermon) => <SermonItem sermon={sermon} />)}
     </div>
@@ -15,12 +17,6 @@ const sermons = await getSermons(4);
 </section>
 
 <style>
-  #media-section h2 {
-    text-align: center;
-    font-size: 2.5rem;
-    margin-bottom: 2.5rem;
-  }
-
   #media-section .container .sermon-list {
     display: flex;
     justify-content: center;

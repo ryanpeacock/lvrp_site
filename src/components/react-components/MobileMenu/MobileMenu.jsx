@@ -14,7 +14,7 @@ const MobileMenu = ({ isHero = false }) => {
   };
 
   return (
-    <div class="block sm:hidden">
+    <div class="block md:hidden">
       <div
         style={{
           opacity: showMobileMenu ? 0.95 : 0,

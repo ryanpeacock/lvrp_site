@@ -1,9 +1,3 @@
-#media-section h2 {
-  text-align: center;
-  font-size: 2.5rem;
-  margin-bottom: 2.5rem;
-}
-
 #media-section .container .sermon-list {
   display: flex;
   justify-content: center;
